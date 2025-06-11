@@ -1,0 +1,155 @@
+<div style={{width: 1265, height: 914, position: 'relative', background: '#F3F4F6'}}>
+  <div style={{width: 1265, height: 850, left: 0, top: 64, position: 'absolute'}}>
+    <div style={{width: 1217, height: 656, left: 24, top: 162, position: 'absolute'}}>
+      <div style={{width: 390, height: 316, left: 827, top: 340, position: 'absolute', background: 'white', boxShadow: '0px 0px 0px black', overflow: 'hidden', borderRadius: 8}}>
+        <div style={{width: 390, height: 156, left: 0, top: 160, position: 'absolute'}}>
+          <div style={{width: 120, height: 40, left: 16, top: 100, position: 'absolute', background: '#22C55E', borderRadius: 4}}>
+            <div style={{width: 88, left: 16, top: 8, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>View Details</div>
+          </div>
+          <div style={{width: 358, height: 24, left: 16, top: 68, position: 'absolute'}}>
+            <div style={{width: 140, left: 0, top: 0, position: 'absolute', color: '#6B7280', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>Location: Near Park</div>
+          </div>
+          <div style={{width: 358, height: 24, left: 16, top: 44, position: 'absolute'}}>
+            <div style={{width: 67, left: 0, top: 0, position: 'absolute', color: '#4B5563', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>$300,000</div>
+          </div>
+          <div style={{width: 358, height: 28, left: 16, top: 16, position: 'absolute'}}>
+            <div style={{width: 170, left: 0, top: 0, position: 'absolute', color: 'black', fontSize: 18, fontFamily: 'Roboto', fontWeight: '700', lineHeight: 28, wordWrap: 'break-word'}}>Charming Apartment</div>
+          </div>
+        </div>
+        <div style={{width: 390, height: 160, left: 0, top: 0, position: 'absolute', overflow: 'hidden'}}>
+          <div style={{width: 390, height: 160, left: 0, top: 0, position: 'absolute', background: '#DDDDDD'}} />
+          <div style={{width: 233.42, height: 25.06, left: 78.29, top: 67.47, position: 'absolute', background: '#999999'}} />
+        </div>
+      </div>
+      <div style={{width: 390, height: 316, left: 414, top: 340, position: 'absolute', background: 'white', boxShadow: '0px 0px 0px black', overflow: 'hidden', borderRadius: 8}}>
+        <div style={{width: 390, height: 156, left: 0, top: 160, position: 'absolute'}}>
+          <div style={{width: 120, height: 40, left: 16, top: 100, position: 'absolute', background: '#22C55E', borderRadius: 4}}>
+            <div style={{width: 88, left: 16, top: 8, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>View Details</div>
+          </div>
+          <div style={{width: 358, height: 24, left: 16, top: 68, position: 'absolute'}}>
+            <div style={{width: 149, left: 0, top: 0, position: 'absolute', color: '#6B7280', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>Location: Urban Area</div>
+          </div>
+          <div style={{width: 358, height: 24, left: 16, top: 44, position: 'absolute'}}>
+            <div style={{width: 67, left: 0, top: 0, position: 'absolute', color: '#4B5563', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>$400,000</div>
+          </div>
+          <div style={{width: 358, height: 28, left: 16, top: 16, position: 'absolute'}}>
+            <div style={{width: 159, left: 0, top: 0, position: 'absolute', color: 'black', fontSize: 18, fontFamily: 'Roboto', fontWeight: '700', lineHeight: 28, wordWrap: 'break-word'}}>Modern Townhouse</div>
+          </div>
+        </div>
+        <div style={{width: 390, height: 160, left: 0, top: 0, position: 'absolute', overflow: 'hidden'}}>
+          <div style={{width: 390, height: 160, left: 0, top: 0, position: 'absolute', background: '#DDDDDD'}} />
+          <div style={{width: 233.42, height: 25.06, left: 78.29, top: 67.47, position: 'absolute', background: '#999999'}} />
+        </div>
+      </div>
+      <div style={{width: 390, height: 316, left: 0, top: 340, position: 'absolute', background: 'white', boxShadow: '0px 0px 0px black', overflow: 'hidden', borderRadius: 8}}>
+        <div style={{width: 390, height: 156, left: 0, top: 160, position: 'absolute'}}>
+          <div style={{width: 120, height: 40, left: 16, top: 100, position: 'absolute', background: '#22C55E', borderRadius: 4}}>
+            <div style={{width: 88, left: 16, top: 8, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>View Details</div>
+          </div>
+          <div style={{width: 358, height: 24, left: 16, top: 68, position: 'absolute'}}>
+            <div style={{width: 129, left: 0, top: 0, position: 'absolute', color: '#6B7280', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>Location: Suburbs</div>
+          </div>
+          <div style={{width: 358, height: 24, left: 16, top: 44, position: 'absolute'}}>
+            <div style={{width: 79, left: 0, top: 0, position: 'absolute', color: '#4B5563', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>$1,200,000</div>
+          </div>
+          <div style={{width: 358, height: 28, left: 16, top: 16, position: 'absolute'}}>
+            <div style={{width: 115, left: 0, top: 0, position: 'absolute', color: 'black', fontSize: 18, fontFamily: 'Roboto', fontWeight: '700', lineHeight: 28, wordWrap: 'break-word'}}>Spacious Villa</div>
+          </div>
+        </div>
+        <div style={{width: 390, height: 160, left: 0, top: 0, position: 'absolute', overflow: 'hidden'}}>
+          <div style={{width: 390, height: 160, left: 0, top: 0, position: 'absolute', background: '#DDDDDD'}} />
+          <div style={{width: 233.42, height: 25.06, left: 78.29, top: 67.47, position: 'absolute', background: '#999999'}} />
+        </div>
+      </div>
+      <div style={{width: 390, height: 316, left: 827, top: 0, position: 'absolute', background: 'white', boxShadow: '0px 0px 0px black', overflow: 'hidden', borderRadius: 8}}>
+        <div style={{width: 390, height: 156, left: 0, top: 160, position: 'absolute'}}>
+          <div style={{width: 120, height: 40, left: 16, top: 100, position: 'absolute', background: '#22C55E', borderRadius: 4}}>
+            <div style={{width: 88, left: 16, top: 8, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>View Details</div>
+          </div>
+          <div style={{width: 358, height: 24, left: 16, top: 68, position: 'absolute'}}>
+            <div style={{width: 156, left: 0, top: 0, position: 'absolute', color: '#6B7280', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>Location: Countryside</div>
+          </div>
+          <div style={{width: 358, height: 24, left: 16, top: 44, position: 'absolute'}}>
+            <div style={{width: 67, left: 0, top: 0, position: 'absolute', color: '#4B5563', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>$250,000</div>
+          </div>
+          <div style={{width: 358, height: 28, left: 16, top: 16, position: 'absolute'}}>
+            <div style={{width: 109, left: 0, top: 0, position: 'absolute', color: 'black', fontSize: 18, fontFamily: 'Roboto', fontWeight: '700', lineHeight: 28, wordWrap: 'break-word'}}>Cozy Cottage</div>
+          </div>
+        </div>
+        <div style={{width: 390, height: 160, left: 0, top: 0, position: 'absolute', overflow: 'hidden'}}>
+          <div style={{width: 390, height: 160, left: 0, top: 0, position: 'absolute', background: '#DDDDDD'}} />
+          <div style={{width: 233.42, height: 25.06, left: 78.29, top: 67.47, position: 'absolute', background: '#999999'}} />
+        </div>
+      </div>
+      <div style={{width: 390, height: 316, left: 414, top: 0, position: 'absolute', background: 'white', boxShadow: '0px 0px 0px black', overflow: 'hidden', borderRadius: 8}}>
+        <div style={{width: 390, height: 156, left: 0, top: 160, position: 'absolute'}}>
+          <div style={{width: 120, height: 40, left: 16, top: 100, position: 'absolute', background: '#22C55E', borderRadius: 4}}>
+            <div style={{width: 88, left: 16, top: 8, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>View Details</div>
+          </div>
+          <div style={{width: 358, height: 24, left: 16, top: 68, position: 'absolute'}}>
+            <div style={{width: 148, left: 0, top: 0, position: 'absolute', color: '#6B7280', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>Location: City Center</div>
+          </div>
+          <div style={{width: 358, height: 24, left: 16, top: 44, position: 'absolute'}}>
+            <div style={{width: 67, left: 0, top: 0, position: 'absolute', color: '#4B5563', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>$550,000</div>
+          </div>
+          <div style={{width: 358, height: 28, left: 16, top: 16, position: 'absolute'}}>
+            <div style={{width: 146, left: 0, top: 0, position: 'absolute', color: 'black', fontSize: 18, fontFamily: 'Roboto', fontWeight: '700', lineHeight: 28, wordWrap: 'break-word'}}>Luxury Apartment</div>
+          </div>
+        </div>
+        <div style={{width: 390, height: 160, left: 0, top: 0, position: 'absolute', overflow: 'hidden'}}>
+          <div style={{width: 390, height: 160, left: 0, top: 0, position: 'absolute', background: '#DDDDDD'}} />
+          <div style={{width: 233.42, height: 25.06, left: 78.29, top: 67.47, position: 'absolute', background: '#999999'}} />
+        </div>
+      </div>
+      <div style={{width: 390, height: 316, left: 0, top: 0, position: 'absolute', background: 'white', boxShadow: '0px 0px 0px black', overflow: 'hidden', borderRadius: 8}}>
+        <div style={{width: 390, height: 156, left: 0, top: 160, position: 'absolute'}}>
+          <div style={{width: 120, height: 40, left: 16, top: 100, position: 'absolute', background: '#22C55E', borderRadius: 4}}>
+            <div style={{width: 88, left: 16, top: 8, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>View Details</div>
+          </div>
+          <div style={{width: 358, height: 24, left: 16, top: 68, position: 'absolute'}}>
+            <div style={{width: 146, left: 0, top: 0, position: 'absolute', color: '#6B7280', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>Location: Downtown</div>
+          </div>
+          <div style={{width: 358, height: 24, left: 16, top: 44, position: 'absolute'}}>
+            <div style={{width: 67, left: 0, top: 0, position: 'absolute', color: '#4B5563', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>$350,000</div>
+          </div>
+          <div style={{width: 358, height: 28, left: 16, top: 16, position: 'absolute'}}>
+            <div style={{width: 145, left: 0, top: 0, position: 'absolute', color: 'black', fontSize: 18, fontFamily: 'Roboto', fontWeight: '700', lineHeight: 28, wordWrap: 'break-word'}}>3 Bedroom House</div>
+          </div>
+        </div>
+        <div style={{width: 390, height: 160, left: 0, top: 0, position: 'absolute', overflow: 'hidden'}}>
+          <div style={{width: 390, height: 160, left: 0, top: 0, position: 'absolute', background: '#DDDDDD'}} />
+          <div style={{width: 233.42, height: 25.06, left: 78.29, top: 67.47, position: 'absolute', background: '#999999'}} />
+        </div>
+      </div>
+    </div>
+    <div style={{width: 1217, height: 32, left: 24, top: 106, position: 'absolute'}}>
+      <div style={{width: 218, left: 0, top: -1, position: 'absolute', color: '#1F2937', fontSize: 24, fontFamily: 'Roboto', fontWeight: '600', lineHeight: 32, wordWrap: 'break-word'}}>Available Properties</div>
+    </div>
+    <div style={{width: 1217, height: 50, left: 24, top: 32, position: 'absolute'}}>
+      <div style={{width: 1217, height: 50, left: 0, top: 0, position: 'absolute', background: 'white', overflow: 'hidden', borderRadius: 8, outline: '1px #D1D5DB solid', outlineOffset: '-1px'}}>
+        <div style={{width: 1204.20, left: 12.80, top: 12, position: 'absolute', color: '#B2B2B2', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>Search properties...</div>
+      </div>
+    </div>
+  </div>
+  <div style={{width: 1265, height: 64, left: 0, top: 0, position: 'absolute', background: 'white', boxShadow: '0px 0px 0px black', overflow: 'hidden'}}>
+    <div style={{width: 1265, height: 64, left: 0, top: 0, position: 'absolute'}}>
+      <div style={{width: 270, height: 24, left: 971, top: 20, position: 'absolute'}}>
+        <div style={{width: 46, height: 19, left: 208, top: 2, position: 'absolute'}}>
+          <div style={{width: 46, left: 0, top: -2, position: 'absolute', color: '#16A34A', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>Profile</div>
+        </div>
+        <div style={{width: 32, height: 19, left: 140, top: 2, position: 'absolute'}}>
+          <div style={{width: 33, left: 0, top: -2, position: 'absolute', color: '#16A34A', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>Rent</div>
+        </div>
+        <div style={{width: 26, height: 19, left: 78, top: 2, position: 'absolute'}}>
+          <div style={{width: 26, left: 0, top: -2, position: 'absolute', color: '#16A34A', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>Sell</div>
+        </div>
+        <div style={{width: 26, height: 19, left: 16, top: 2, position: 'absolute'}}>
+          <div style={{width: 27, left: 0, top: -2, position: 'absolute', color: '#16A34A', fontSize: 16, fontFamily: 'Roboto', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>Buy</div>
+        </div>
+      </div>
+      <div style={{width: 192, height: 32, left: 24, top: 16, position: 'absolute'}}>
+        <div style={{width: 192, left: 0, top: 0, position: 'absolute', color: '#1F2937', fontSize: 24, fontFamily: 'Roboto', fontWeight: '700', lineHeight: 32, wordWrap: 'break-word'}}>Real Estate Agent</div>
+      </div>
+    </div>
+  </div>
+</div>
