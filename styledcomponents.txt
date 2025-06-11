@@ -1,0 +1,1046 @@
+import React from "react";
+import styled from "styled-components";
+
+const StyledViewdetailsspan = styled.span`
+  color: white;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const StyledLocationnearparkspan = styled.span`
+  color: #6B7280;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const Styled300000span = styled.span`
+  color: #4B5563;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const StyledCharmingapartmentspan = styled.span`
+  color: black;
+  font-size: 18px;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: 28px;
+  word-wrap: break-word;
+`;
+
+const StyledVector = styled.div`
+  width: 390px;
+  height: 160px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #DDDDDD;
+`;
+
+const StyledVector01 = styled.div`
+  width: 233.42px;
+  height: 25.06px;
+  left: 78.29px;
+  top: 67.47px;
+  position: absolute;
+  background: #999999;
+`;
+
+const StyledViewdetails01span = styled.span`
+  color: white;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const StyledLocationurbanareaspan = styled.span`
+  color: #6B7280;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const Styled400000span = styled.span`
+  color: #4B5563;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const StyledModerntownhousespan = styled.span`
+  color: black;
+  font-size: 18px;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: 28px;
+  word-wrap: break-word;
+`;
+
+const StyledVector02 = styled.div`
+  width: 390px;
+  height: 160px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #DDDDDD;
+`;
+
+const StyledVector03 = styled.div`
+  width: 233.42px;
+  height: 25.06px;
+  left: 78.29px;
+  top: 67.47px;
+  position: absolute;
+  background: #999999;
+`;
+
+const StyledViewdetails02span = styled.span`
+  color: white;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const StyledLocationsuburbsspan = styled.span`
+  color: #6B7280;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const Styled1200000span = styled.span`
+  color: #4B5563;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const StyledSpaciousvillaspan = styled.span`
+  color: black;
+  font-size: 18px;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: 28px;
+  word-wrap: break-word;
+`;
+
+const StyledVector04 = styled.div`
+  width: 390px;
+  height: 160px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #DDDDDD;
+`;
+
+const StyledVector05 = styled.div`
+  width: 233.42px;
+  height: 25.06px;
+  left: 78.29px;
+  top: 67.47px;
+  position: absolute;
+  background: #999999;
+`;
+
+const StyledViewdetails03span = styled.span`
+  color: white;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const StyledLocationcountrysidespan = styled.span`
+  color: #6B7280;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const Styled250000span = styled.span`
+  color: #4B5563;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const StyledCozycottagespan = styled.span`
+  color: black;
+  font-size: 18px;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: 28px;
+  word-wrap: break-word;
+`;
+
+const StyledVector06 = styled.div`
+  width: 390px;
+  height: 160px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #DDDDDD;
+`;
+
+const StyledVector07 = styled.div`
+  width: 233.42px;
+  height: 25.06px;
+  left: 78.29px;
+  top: 67.47px;
+  position: absolute;
+  background: #999999;
+`;
+
+const StyledViewdetails04span = styled.span`
+  color: white;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const StyledLocationcitycenterspan = styled.span`
+  color: #6B7280;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const Styled550000span = styled.span`
+  color: #4B5563;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const StyledLuxuryapartmentspan = styled.span`
+  color: black;
+  font-size: 18px;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: 28px;
+  word-wrap: break-word;
+`;
+
+const StyledVector08 = styled.div`
+  width: 390px;
+  height: 160px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #DDDDDD;
+`;
+
+const StyledVector09 = styled.div`
+  width: 233.42px;
+  height: 25.06px;
+  left: 78.29px;
+  top: 67.47px;
+  position: absolute;
+  background: #999999;
+`;
+
+const StyledViewdetails05span = styled.span`
+  color: white;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const StyledLocationdowntownspan = styled.span`
+  color: #6B7280;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const Styled350000span = styled.span`
+  color: #4B5563;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const Styled3bedroomhousespan = styled.span`
+  color: black;
+  font-size: 18px;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: 28px;
+  word-wrap: break-word;
+`;
+
+const StyledVector10 = styled.div`
+  width: 390px;
+  height: 160px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #DDDDDD;
+`;
+
+const StyledVector11 = styled.div`
+  width: 233.42px;
+  height: 25.06px;
+  left: 78.29px;
+  top: 67.47px;
+  position: absolute;
+  background: #999999;
+`;
+
+const StyledAvailablepropertiesspan = styled.span`
+  color: #1F2937;
+  font-size: 24px;
+  font-family: Roboto;
+  font-weight: 600;
+  line-height: 32px;
+  word-wrap: break-word;
+`;
+
+const StyledSearchpropertiesspan = styled.span`
+  color: #B2B2B2;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const StyledProfilespan = styled.span`
+  color: #16A34A;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const StyledRentspan = styled.span`
+  color: #16A34A;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const StyledSellspan = styled.span`
+  color: #16A34A;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const StyledBuyspan = styled.span`
+  color: #16A34A;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+`;
+
+const StyledRealestateagentspan = styled.span`
+  color: #1F2937;
+  font-size: 24px;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: 32px;
+  word-wrap: break-word;
+`;
+
+const StyledFrame05 = styled.div`
+  width: 120px;
+  height: 40px;
+  left: 16px;
+  top: 100px;
+  position: absolute;
+  background: #22C55E;
+  border-radius: 4px;
+`;
+
+const StyledFrame06 = styled.div`
+  width: 358px;
+  height: 24px;
+  left: 16px;
+  top: 68px;
+  position: absolute;
+`;
+
+const StyledFrame07 = styled.div`
+  width: 358px;
+  height: 24px;
+  left: 16px;
+  top: 44px;
+  position: absolute;
+`;
+
+const StyledFrame08 = styled.div`
+  width: 358px;
+  height: 28px;
+  left: 16px;
+  top: 16px;
+  position: absolute;
+`;
+
+const StyledFrame12 = styled.div`
+  width: 120px;
+  height: 40px;
+  left: 16px;
+  top: 100px;
+  position: absolute;
+  background: #22C55E;
+  border-radius: 4px;
+`;
+
+const StyledFrame13 = styled.div`
+  width: 358px;
+  height: 24px;
+  left: 16px;
+  top: 68px;
+  position: absolute;
+`;
+
+const StyledFrame14 = styled.div`
+  width: 358px;
+  height: 24px;
+  left: 16px;
+  top: 44px;
+  position: absolute;
+`;
+
+const StyledFrame15 = styled.div`
+  width: 358px;
+  height: 28px;
+  left: 16px;
+  top: 16px;
+  position: absolute;
+`;
+
+const StyledFrame19 = styled.div`
+  width: 120px;
+  height: 40px;
+  left: 16px;
+  top: 100px;
+  position: absolute;
+  background: #22C55E;
+  border-radius: 4px;
+`;
+
+const StyledFrame20 = styled.div`
+  width: 358px;
+  height: 24px;
+  left: 16px;
+  top: 68px;
+  position: absolute;
+`;
+
+const StyledFrame21 = styled.div`
+  width: 358px;
+  height: 24px;
+  left: 16px;
+  top: 44px;
+  position: absolute;
+`;
+
+const StyledFrame22 = styled.div`
+  width: 358px;
+  height: 28px;
+  left: 16px;
+  top: 16px;
+  position: absolute;
+`;
+
+const StyledFrame26 = styled.div`
+  width: 120px;
+  height: 40px;
+  left: 16px;
+  top: 100px;
+  position: absolute;
+  background: #22C55E;
+  border-radius: 4px;
+`;
+
+const StyledFrame27 = styled.div`
+  width: 358px;
+  height: 24px;
+  left: 16px;
+  top: 68px;
+  position: absolute;
+`;
+
+const StyledFrame28 = styled.div`
+  width: 358px;
+  height: 24px;
+  left: 16px;
+  top: 44px;
+  position: absolute;
+`;
+
+const StyledFrame29 = styled.div`
+  width: 358px;
+  height: 28px;
+  left: 16px;
+  top: 16px;
+  position: absolute;
+`;
+
+const StyledFrame33 = styled.div`
+  width: 120px;
+  height: 40px;
+  left: 16px;
+  top: 100px;
+  position: absolute;
+  background: #22C55E;
+  border-radius: 4px;
+`;
+
+const StyledFrame34 = styled.div`
+  width: 358px;
+  height: 24px;
+  left: 16px;
+  top: 68px;
+  position: absolute;
+`;
+
+const StyledFrame35 = styled.div`
+  width: 358px;
+  height: 24px;
+  left: 16px;
+  top: 44px;
+  position: absolute;
+`;
+
+const StyledFrame36 = styled.div`
+  width: 358px;
+  height: 28px;
+  left: 16px;
+  top: 16px;
+  position: absolute;
+`;
+
+const StyledFrame40 = styled.div`
+  width: 120px;
+  height: 40px;
+  left: 16px;
+  top: 100px;
+  position: absolute;
+  background: #22C55E;
+  border-radius: 4px;
+`;
+
+const StyledFrame41 = styled.div`
+  width: 358px;
+  height: 24px;
+  left: 16px;
+  top: 68px;
+  position: absolute;
+`;
+
+const StyledFrame42 = styled.div`
+  width: 358px;
+  height: 24px;
+  left: 16px;
+  top: 44px;
+  position: absolute;
+`;
+
+const StyledFrame43 = styled.div`
+  width: 358px;
+  height: 28px;
+  left: 16px;
+  top: 16px;
+  position: absolute;
+`;
+
+const StyledFrame45 = styled.div`
+  width: 1217px;
+  height: 32px;
+  left: 24px;
+  top: 106px;
+  position: absolute;
+`;
+
+const StyledFrame47 = styled.div`
+  width: 1217px;
+  height: 50px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: white;
+  overflow: hidden;
+  border-radius: 8px;
+  outline: 1px #D1D5DB solid;
+  outline-offset: -1px;
+`;
+
+const StyledFrame51 = styled.div`
+  width: 46px;
+  height: 19px;
+  left: 208px;
+  top: 2px;
+  position: absolute;
+`;
+
+const StyledFrame52 = styled.div`
+  width: 32px;
+  height: 19px;
+  left: 140px;
+  top: 2px;
+  position: absolute;
+`;
+
+const StyledFrame53 = styled.div`
+  width: 26px;
+  height: 19px;
+  left: 78px;
+  top: 2px;
+  position: absolute;
+`;
+
+const StyledFrame54 = styled.div`
+  width: 26px;
+  height: 19px;
+  left: 16px;
+  top: 2px;
+  position: absolute;
+`;
+
+const StyledFrame55 = styled.div`
+  width: 192px;
+  height: 32px;
+  left: 24px;
+  top: 16px;
+  position: absolute;
+`;
+
+const StyledFrame09 = styled.div`
+  width: 390px;
+  height: 160px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  overflow: hidden;
+`;
+
+const StyledFrame16 = styled.div`
+  width: 390px;
+  height: 160px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  overflow: hidden;
+`;
+
+const StyledFrame23 = styled.div`
+  width: 390px;
+  height: 160px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  overflow: hidden;
+`;
+
+const StyledFrame30 = styled.div`
+  width: 390px;
+  height: 160px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  overflow: hidden;
+`;
+
+const StyledFrame37 = styled.div`
+  width: 390px;
+  height: 160px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  overflow: hidden;
+`;
+
+const StyledFrame44 = styled.div`
+  width: 390px;
+  height: 160px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  overflow: hidden;
+`;
+
+const StyledFrame04 = styled.div`
+  width: 390px;
+  height: 156px;
+  left: 0px;
+  top: 160px;
+  position: absolute;
+`;
+
+const StyledFrame11 = styled.div`
+  width: 390px;
+  height: 156px;
+  left: 0px;
+  top: 160px;
+  position: absolute;
+`;
+
+const StyledFrame18 = styled.div`
+  width: 390px;
+  height: 156px;
+  left: 0px;
+  top: 160px;
+  position: absolute;
+`;
+
+const StyledFrame25 = styled.div`
+  width: 390px;
+  height: 156px;
+  left: 0px;
+  top: 160px;
+  position: absolute;
+`;
+
+const StyledFrame32 = styled.div`
+  width: 390px;
+  height: 156px;
+  left: 0px;
+  top: 160px;
+  position: absolute;
+`;
+
+const StyledFrame39 = styled.div`
+  width: 390px;
+  height: 156px;
+  left: 0px;
+  top: 160px;
+  position: absolute;
+`;
+
+const StyledFrame46 = styled.div`
+  width: 1217px;
+  height: 50px;
+  left: 24px;
+  top: 32px;
+  position: absolute;
+`;
+
+const StyledFrame50 = styled.div`
+  width: 270px;
+  height: 24px;
+  left: 971px;
+  top: 20px;
+  position: absolute;
+`;
+
+const StyledFrame03 = styled.div`
+  width: 390px;
+  height: 316px;
+  left: 827px;
+  top: 340px;
+  position: absolute;
+  background: white;
+  box-shadow: 0px 0px 0px black;
+  overflow: hidden;
+  border-radius: 8px;
+`;
+
+const StyledFrame10 = styled.div`
+  width: 390px;
+  height: 316px;
+  left: 414px;
+  top: 340px;
+  position: absolute;
+  background: white;
+  box-shadow: 0px 0px 0px black;
+  overflow: hidden;
+  border-radius: 8px;
+`;
+
+const StyledFrame17 = styled.div`
+  width: 390px;
+  height: 316px;
+  left: 0px;
+  top: 340px;
+  position: absolute;
+  background: white;
+  box-shadow: 0px 0px 0px black;
+  overflow: hidden;
+  border-radius: 8px;
+`;
+
+const StyledFrame24 = styled.div`
+  width: 390px;
+  height: 316px;
+  left: 827px;
+  top: 0px;
+  position: absolute;
+  background: white;
+  box-shadow: 0px 0px 0px black;
+  overflow: hidden;
+  border-radius: 8px;
+`;
+
+const StyledFrame31 = styled.div`
+  width: 390px;
+  height: 316px;
+  left: 414px;
+  top: 0px;
+  position: absolute;
+  background: white;
+  box-shadow: 0px 0px 0px black;
+  overflow: hidden;
+  border-radius: 8px;
+`;
+
+const StyledFrame38 = styled.div`
+  width: 390px;
+  height: 316px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: white;
+  box-shadow: 0px 0px 0px black;
+  overflow: hidden;
+  border-radius: 8px;
+`;
+
+const StyledFrame49 = styled.div`
+  width: 1265px;
+  height: 64px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+`;
+
+const StyledFrame02 = styled.div`
+  width: 1217px;
+  height: 656px;
+  left: 24px;
+  top: 162px;
+  position: absolute;
+`;
+
+const StyledFrame48 = styled.div`
+  width: 1265px;
+  height: 64px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: white;
+  box-shadow: 0px 0px 0px black;
+  overflow: hidden;
+`;
+
+const StyledFrame01 = styled.div`
+  width: 1265px;
+  height: 850px;
+  left: 0px;
+  top: 64px;
+  position: absolute;
+`;
+
+const StyledFrame = styled.div`
+  width: 1265px;
+  height: 914px;
+  position: relative;
+  background: #F3F4F6;
+`;
+
+export const Frame = () => {
+  return (
+    <StyledFrame>
+      <StyledFrame01>
+        <StyledFrame02>
+          <StyledFrame03>
+            <StyledFrame04>
+              <StyledFrame05>
+                <StyledViewDetails>View Details</StyledViewDetails>
+              </StyledFrame05>
+              <StyledFrame06>
+                <StyledLocationNearPark>Location: Near Park</StyledLocationNearPark>
+              </StyledFrame06>
+              <StyledFrame07>
+                <Styled300000>$300,000</Styled300000>
+              </StyledFrame07>
+              <StyledFrame08>
+                <StyledCharmingApartment>Charming Apartment</StyledCharmingApartment>
+              </StyledFrame08>
+            </StyledFrame04>
+            <StyledFrame09>
+              <StyledVector />
+              <StyledVector01 />
+            </StyledFrame09>
+          </StyledFrame03>
+          <StyledFrame10>
+            <StyledFrame11>
+              <StyledFrame12>
+                <StyledViewDetails01>View Details</StyledViewDetails01>
+              </StyledFrame12>
+              <StyledFrame13>
+                <StyledLocationUrbanArea>Location: Urban Area</StyledLocationUrbanArea>
+              </StyledFrame13>
+              <StyledFrame14>
+                <Styled400000>$400,000</Styled400000>
+              </StyledFrame14>
+              <StyledFrame15>
+                <StyledModernTownhouse>Modern Townhouse</StyledModernTownhouse>
+              </StyledFrame15>
+            </StyledFrame11>
+            <StyledFrame16>
+              <StyledVector02 />
+              <StyledVector03 />
+            </StyledFrame16>
+          </StyledFrame10>
+          <StyledFrame17>
+            <StyledFrame18>
+              <StyledFrame19>
+                <StyledViewDetails02>View Details</StyledViewDetails02>
+              </StyledFrame19>
+              <StyledFrame20>
+                <StyledLocationSuburbs>Location: Suburbs</StyledLocationSuburbs>
+              </StyledFrame20>
+              <StyledFrame21>
+                <Styled1200000>$1,200,000</Styled1200000>
+              </StyledFrame21>
+              <StyledFrame22>
+                <StyledSpaciousVilla>Spacious Villa</StyledSpaciousVilla>
+              </StyledFrame22>
+            </StyledFrame18>
+            <StyledFrame23>
+              <StyledVector04 />
+              <StyledVector05 />
+            </StyledFrame23>
+          </StyledFrame17>
+          <StyledFrame24>
+            <StyledFrame25>
+              <StyledFrame26>
+                <StyledViewDetails03>View Details</StyledViewDetails03>
+              </StyledFrame26>
+              <StyledFrame27>
+                <StyledLocationCountryside>Location: Countryside</StyledLocationCountryside>
+              </StyledFrame27>
+              <StyledFrame28>
+                <Styled250000>$250,000</Styled250000>
+              </StyledFrame28>
+              <StyledFrame29>
+                <StyledCozyCottage>Cozy Cottage</StyledCozyCottage>
+              </StyledFrame29>
+            </StyledFrame25>
+            <StyledFrame30>
+              <StyledVector06 />
+              <StyledVector07 />
+            </StyledFrame30>
+          </StyledFrame24>
+          <StyledFrame31>
+            <StyledFrame32>
+              <StyledFrame33>
+                <StyledViewDetails04>View Details</StyledViewDetails04>
+              </StyledFrame33>
+              <StyledFrame34>
+                <StyledLocationCityCenter>Location: City Center</StyledLocationCityCenter>
+              </StyledFrame34>
+              <StyledFrame35>
+                <Styled550000>$550,000</Styled550000>
+              </StyledFrame35>
+              <StyledFrame36>
+                <StyledLuxuryApartment>Luxury Apartment</StyledLuxuryApartment>
+              </StyledFrame36>
+            </StyledFrame32>
+            <StyledFrame37>
+              <StyledVector08 />
+              <StyledVector09 />
+            </StyledFrame37>
+          </StyledFrame31>
+          <StyledFrame38>
+            <StyledFrame39>
+              <StyledFrame40>
+                <StyledViewDetails05>View Details</StyledViewDetails05>
+              </StyledFrame40>
+              <StyledFrame41>
+                <StyledLocationDowntown>Location: Downtown</StyledLocationDowntown>
+              </StyledFrame41>
+              <StyledFrame42>
+                <Styled350000>$350,000</Styled350000>
+              </StyledFrame42>
+              <StyledFrame43>
+                <Styled3BedroomHouse>3 Bedroom House</Styled3BedroomHouse>
+              </StyledFrame43>
+            </StyledFrame39>
+            <StyledFrame44>
+              <StyledVector10 />
+              <StyledVector11 />
+            </StyledFrame44>
+          </StyledFrame38>
+        </StyledFrame02>
+        <StyledFrame45>
+          <StyledAvailableProperties>Available Properties</StyledAvailableProperties>
+        </StyledFrame45>
+        <StyledFrame46>
+          <StyledFrame47>
+            <StyledSearchproperties>Search properties...</StyledSearchproperties>
+          </StyledFrame47>
+        </StyledFrame46>
+      </StyledFrame01>
+      <StyledFrame48>
+        <StyledFrame49>
+          <StyledFrame50>
+            <StyledFrame51>
+              <StyledProfile>Profile</StyledProfile>
+            </StyledFrame51>
+            <StyledFrame52>
+              <StyledRent>Rent</StyledRent>
+            </StyledFrame52>
+            <StyledFrame53>
+              <StyledSell>Sell</StyledSell>
+            </StyledFrame53>
+            <StyledFrame54>
+              <StyledBuy>Buy</StyledBuy>
+            </StyledFrame54>
+          </StyledFrame50>
+          <StyledFrame55>
+            <StyledRealEstateAgent>Real Estate Agent</StyledRealEstateAgent>
+          </StyledFrame55>
+        </StyledFrame49>
+      </StyledFrame48>
+    </StyledFrame>
+  );
+};
