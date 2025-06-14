@@ -1,68 +1,77 @@
 'use client'
 
 import Link from "next/link";
+import { log } from "node:console";
+import { EventEmitter } from "node:stream";
+import { SyntheticModule } from "node:vm";
+import { ChangeEvent, useEffect, useState } from "react";
 
 export default function Page() {
+  const listings = [
+    {
+      title: 'Cozy Cottage',
+      price: '$250,000',
+      location: 'Countryside',
+    },
+    {
+      title: 'Luxury Apartment',
+      price: '$550,000',
+      location: 'City Center',
+    },
+    {
+      title: '3 Bedroom House',
+      price: '$350,000',
+      location: 'Downtown',
+    },
+    {
+      title: 'Spacious Villa',
+      price: '$1,200,000',
+      location: 'Suburbs',
+    },
+    {
+      title: 'Modern Townhouse',
+      price: '$400,000',
+      location: 'Urban Area',
+    },
+    {
+      title: 'Charming Apartment',
+      price: '$300,000',
+      location: 'Near Park',
+    },
+  ];
+  const [properties, setProperties] = useState(listings);
+  const [recommendations,setRecommendations] = useState<String[] | null>(null);
+
+  function searchChangeHandler(event: ChangeEvent<HTMLInputElement>): void {
+    if(!event.target.value) {
+      setRecommendations(null);
+      return;
+    };
+
+    const filteredProperties = properties.filter(property=>{
+      return property.title.includes(event.target.value) || property.title.toLowerCase().includes(event.target.value);
+    });
+
+    console.log(filteredProperties);
+    setRecommendations(filteredProperties.map(item=>item.title));
+  } 
+
+  function searchClickHandler(event): void {
+    const selectedProperty = properties.filter(item=> item.title === event.target.textContent);
+    console.log(selectedProperty);
+    
+    setProperties(selectedProperty);
+  }
+
   return (
     <>
       <style jsx>{`
-        /* CSS Reset */
-        *,
-        *::before,
-        *::after {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        }
-
-        html, body {
-        height: 100%;
-        font-family: 'Roboto', sans-serif;
-        background-color: #F9FAFB; /* light neutral background */
-        color: #1F2937; /* dark text color */
-        line-height: 1.5;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        }
-
-        img, picture, video, canvas, svg {
-        display: block;
-        max-width: 100%;
-        height: auto;
-        }
-
-        input, button, textarea, select {
-        font: inherit;
-        }
-
-        button {
-        cursor: pointer;
-        background: none;
-        border: none;
-        }
-
-        a {
-        text-decoration: none;
-        color: inherit;
-        }
-
-        ul, ol {
-        list-style: none;
-        }
-
-        table {
-        border-collapse: collapse;
-        border-spacing: 0;
-        }
-
-    
         /* Custom Styles */
         .page-container {
           max-width: 1265px;
           width: 100%;
           margin: 0 auto;
           position: relative;
-          background-color: #f9fafb; /* Light neutral background */
           font-family: 'Roboto', sans-serif;
           color: #374151; /* Darker gray for text */
         }
@@ -234,42 +243,26 @@ export default function Page() {
 
     <div className="page-container">
     <main className="content">
-        <input type="search" className="search-bar" placeholder="Search properties..."/>
+      <div className="relative">
+        <input  onChange={searchChangeHandler} type="search" className="search-bar mt-4" placeholder="Search properties..."/>
+
+        {recommendations && recommendations.length > 0 &&
+         <ul className="absolute top-full left-0 w-full bg-white  border-[1px] border-[#d1d5db] z-[9] shadow-[0px_3px_5px_0px_#0000006b]">
+            {recommendations.map((item,index)=>{
+              
+
+              return (<li className="first-of-type:border-t-0 last-of-type:border-b-0 border-t-[1px]" key={index}>
+                <button onClick={searchClickHandler} className="w-full text-left px-4 py-1 cursor-pointer">{item}</button>
+              </li>)
+            })}
+          </ul>
+        }
+      </div>
+
         <h1 className="title">Available Properties</h1>
 
         <div className="cards-container">
-        {[
-            {
-            title: 'Cozy Cottage',
-            price: '$250,000',
-            location: 'Countryside',
-            },
-            {
-            title: 'Luxury Apartment',
-            price: '$550,000',
-            location: 'City Center',
-            },
-            {
-            title: '3 Bedroom House',
-            price: '$350,000',
-            location: 'Downtown',
-            },
-            {
-            title: 'Spacious Villa',
-            price: '$1,200,000',
-            location: 'Suburbs',
-            },
-            {
-            title: 'Modern Townhouse',
-            price: '$400,000',
-            location: 'Urban Area',
-            },
-            {
-            title: 'Charming Apartment',
-            price: '$300,000',
-            location: 'Near Park',
-            },
-        ].map(({ title, price, location }) => (
+        {listings.map(({ title, price, location }) => (
             <div key={title} className="card">
             <div className="card-image">
                 <div className="image-placeholder" />
