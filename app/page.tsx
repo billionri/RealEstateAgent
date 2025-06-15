@@ -7,7 +7,7 @@ import { SyntheticModule } from "node:vm";
 import { ChangeEvent, useEffect, useState } from "react";
 
 export default function Page() {
-  const listings = [
+  const dummyProperties = [
     {
       title: 'Cozy Cottage',
       price: '$250,000',
@@ -39,12 +39,12 @@ export default function Page() {
       location: 'Near Park',
     },
   ];
-  const [properties, setProperties] = useState(listings);
+  const [properties, setProperties] = useState(dummyProperties);
   const [recommendations,setRecommendations] = useState<String[] | null>(null);
 
   function searchChangeHandler(event: ChangeEvent<HTMLInputElement>): void {
     if(!event.target.value) {
-      setRecommendations(null);
+      setProperties(dummyProperties);
       return;
     };
 
@@ -53,7 +53,7 @@ export default function Page() {
     });
 
     console.log(filteredProperties);
-    setRecommendations(filteredProperties.map(item=>item.title));
+    setProperties(filteredProperties);
   } 
 
   function searchClickHandler(event): void {
@@ -147,7 +147,6 @@ export default function Page() {
           display: flex;
           flex-wrap: wrap;
           gap: 24px;
-          justify-content: space-between;
         }
 
         .card {
@@ -246,7 +245,7 @@ export default function Page() {
       <div className="relative">
         <input  onChange={searchChangeHandler} type="search" className="search-bar mt-4" placeholder="Search properties..."/>
 
-        {recommendations && recommendations.length > 0 &&
+        {/* {recommendations && recommendations.length > 0 &&
          <ul className="absolute top-full left-0 w-full bg-white  border-[1px] border-[#d1d5db] z-[9] shadow-[0px_3px_5px_0px_#0000006b]">
             {recommendations.map((item,index)=>{
               
@@ -256,13 +255,13 @@ export default function Page() {
               </li>)
             })}
           </ul>
-        }
+        } */}
       </div>
 
         <h1 className="title">Available Properties</h1>
 
         <div className="cards-container">
-        {listings.map(({ title, price, location }) => (
+        {properties && properties.map(({ title, price, location }) => (
             <div key={title} className="card">
             <div className="card-image">
                 <div className="image-placeholder" />
@@ -275,6 +274,27 @@ export default function Page() {
             </div>
             </div>
         ))}
+        { properties.length === 0 && (
+          <div className="w-full h-[250px] flex flex-col items-center justify-center text-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-10 w-10 text-gray-400 mb-3"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9.75 9.75L14.25 14.25M9.75 14.25L14.25 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <p className="text-gray-500 text-lg font-medium">No properties found</p>
+            <p className="text-gray-400 text-sm mt-1">Try looking up something else</p>
+          </div>
+        )}
         </div>
     </main>
     </div>
