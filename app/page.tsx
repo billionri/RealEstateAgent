@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from "next/link";
 import { log } from "node:console";
@@ -9,33 +9,33 @@ import { ChangeEvent, useEffect, useState } from "react";
 export default function Page() {
   const listings = [
     {
-      title: 'Cozy Cottage',
-      price: '$250,000',
+      title: 'Sneh Sadan',
+      price: '₹250,000',
       location: 'Countryside',
     },
     {
-      title: 'Luxury Apartment',
-      price: '$550,000',
+      title: 'Sant Ekdant',
+      price: '₹550,000',
       location: 'City Center',
     },
     {
-      title: '3 Bedroom House',
-      price: '$350,000',
+      title: 'Swapna Housing',
+      price: '$₹350,000',
       location: 'Downtown',
     },
     {
-      title: 'Spacious Villa',
-      price: '$1,200,000',
+      title: 'Shanti Niketan',
+      price: '₹1,200,000',
       location: 'Suburbs',
     },
     {
-      title: 'Modern Townhouse',
-      price: '$400,000',
+      title: 'Rubi',
+      price: '₹400,000',
       location: 'Urban Area',
     },
     {
-      title: 'Charming Apartment',
-      price: '$300,000',
+      title: 'Trinity',
+      price: '₹300,000',
       location: 'Near Park',
     },
   ];
