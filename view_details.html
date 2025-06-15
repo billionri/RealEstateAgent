@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>View Property Details</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Property Details</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #e0f2e9;
+    color: #333;
+  }
+
+  header {
+    background-color: #4CAF50;
+    padding: 20px;
+    color: white;
+    text-align: center;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+  }
+
+  .property-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .main-image {
+    flex: 1 1 45%;
+    min-width: 300px;
+  }
+
+  .main-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .details {
+    flex: 1 1 45%;
+    min-width: 300px;
+  }
+
+  .details h2 {
+    margin-top: 0;
+  }
+
+  .price {
+    font-size: 1.5em;
+    color: #2e7d32;
+    margin-bottom: 10px;
+  }
+
+  .location {
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .description {
+    margin-bottom: 20px;
+  }
+
+  .features {
+    list-style: none;
+    padding: 0;
+  }
+
+  .features li {
+    background-color: #aed581;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+  }
+
+  /* Gallery styles */
+  .gallery {
+    margin-top: 40px;
+  }
+
+  .gallery h3 {
+    margin-bottom: 10px;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .gallery-grid img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Modal styles for enlarged images */
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 999; 
+    padding-top: 60px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+  }
+
+  .close {
+    position: absolute;
+    top: 30px;
+    right: 45px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  @media(max-width: 768px){
+    .property-info {
+      flex-direction: column;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Property Details</h1>
+</header>
+
+<div class="container">
+  <div class="property-info">
+    <div class="main-image">
+      <img src="https://images.unsplash.com/photo-1560185127-6c1a5523716b?ixlib=rb-4.0.0&auto=format&fit=crop&w=800&q=80" alt="Main Property Image" id="mainPropertyImg" />
+    </div>
+    <div class="details">
+      <h2>Luxury Green Villa</h2>
+      <div class="price">$250,000</div>
+      <div class="location"><strong>Location:</strong> Green Valley, California</div>
+      <div class="description">
+        Experience serene living in this beautiful green-themed villa. Spacious rooms, lush gardens, and modern amenities await you.
+      </div>
+      <h3>Features:</h3>
+      <ul class="features">
+        <li>3 Bedrooms</li>
+        <li>2 Bathrooms</li>
+        <li>Swimming Pool</li>
+        <li>Garden & Patio</li>
+        <li>Garage for 2 Cars</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="gallery">
+    <h3>Gallery</h3>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1560185127-6c1a5523716b?ixlib=rb-4.0.0&auto=format&fit=crop&w=150&q=80" alt="Living Room" />
+      <img src="https://images.unsplash.com/photo-1619541398620-4f7e66d4b548?ixlib=rb-4.0.0&auto=format&fit=crop&w=150&q=80" alt="Bedroom" />
+      <img src="https://images.unsplash.com/photo-1577122649339-4891b2007b57?ixlib=rb-4.0.0&auto=format&fit=crop&w=150&q=80" alt="Kitchen" />
+      <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.0&auto=format&fit=crop&w=150&q=80" alt="Garden" />
+    </div>
+  </div>
+</div>
+
+<!-- The Modal for Image Enlargements -->
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg" />
+</div>
+
+<script>
+  // JavaScript for gallery image click to enlarge
+  const galleryImages = document.querySelectorAll('.gallery-grid img');
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeBtn = document.getElementsByClassName("close")[0];
+
+  galleryImages.forEach(img => {
+    img.onclick = () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+    }
+  });
+
+  // Close modal when clicking on 'x'
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+  }
+
+  // Close modal when clicking outside the image
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Property Details</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #e0f2e9;
+    color: #333;
+  }
+
+  header {
+    background-color: #4CAF50;
+    padding: 20px;
+    color: white;
+    text-align: center;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+  }
+
+  .property-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .main-image {
+    flex: 1 1 45%;
+    min-width: 300px;
+  }
+
+  .main-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .details {
+    flex: 1 1 45%;
+    min-width: 300px;
+  }
+
+  .details h2 {
+    margin-top: 0;
+  }
+
+  .price {
+    font-size: 1.5em;
+    color: #2e7d32;
+    margin-bottom: 10px;
+  }
+
+  .location {
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .description {
+    margin-bottom: 20px;
+  }
+
+  .features {
+    list-style: none;
+    padding: 0;
+  }
+
+  .features li {
+    background-color: #aed581;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+  }
+
+  /* Gallery styles */
+  .gallery {
+    margin-top: 40px;
+  }
+
+  .gallery h3 {
+    margin-bottom: 10px;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .gallery-grid img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Modal styles for enlarged images */
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 999; 
+    padding-top: 60px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+  }
+
+  .close {
+    position: absolute;
+    top: 30px;
+    right: 45px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  @media(max-width: 768px){
+    .property-info {
+      flex-direction: column;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Property Details</h1>
+</header>
+
+<div class="container">
+  <div class="property-info">
+    <div class="main-image">
+      <img src="https://images.unsplash.com/photo-1560185127-6c1a5523716b?ixlib=rb-4.0.0&auto=format&fit=crop&w=800&q=80" alt="Main Property Image" id="mainPropertyImg" />
+    </div>
+    <div class="details">
+      <h2>Luxury Green Villa</h2>
+      <div class="price">$250,000</div>
+      <div class="location"><strong>Location:</strong> Green Valley, California</div>
+      <div class="description">
+        Experience serene living in this beautiful green-themed villa. Spacious rooms, lush gardens, and modern amenities await you.
+      </div>
+      <h3>Features:</h3>
+      <ul class="features">
+        <li>3 Bedrooms</li>
+        <li>2 Bathrooms</li>
+        <li>Swimming Pool</li>
+        <li>Garden & Patio</li>
+        <li>Garage for 2 Cars</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="gallery">
+    <h3>Gallery</h3>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1560185127-6c1a5523716b?ixlib=rb-4.0.0&auto=format&fit=crop&w=150&q=80" alt="Living Room" />
+      <img src="https://images.unsplash.com/photo-1619541398620-4f7e66d4b548?ixlib=rb-4.0.0&auto=format&fit=crop&w=150&q=80" alt="Bedroom" />
+      <img src="https://images.unsplash.com/photo-1577122649339-4891b2007b57?ixlib=rb-4.0.0&auto=format&fit=crop&w=150&q=80" alt="Kitchen" />
+      <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.0&auto=format&fit=crop&w=150&q=80" alt="Garden" />
+    </div>
+  </div>
+</div>
+
+<!-- The Modal for Image Enlargements -->
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg" />
+</div>
+
+<script>
+  // JavaScript for gallery image click to enlarge
+  const galleryImages = document.querySelectorAll('.gallery-grid img');
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeBtn = document.getElementsByClassName("close")[0];
+
+  galleryImages.forEach(img => {
+    img.onclick = () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+    }
+  });
+
+  // Close modal when clicking on 'x'
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+  }
+
+  // Close modal when clicking outside the image
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>
+        background-color: #f0f9f0;
+        color: #333;
+    }
+    header {
+        background-color: #28a745;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 20px auto;
+    }
+    h1 {
+        margin-top: 0;
+    }
+    .search-section {
+        background-color: #fff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+    }
+    input, select, button {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        flex: 1;
+        min-width: 150px;
+    }
+    button {
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    button:hover {
+        background-color: #218838;
+    }
+    /* Property cards grid */
+    .properties {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    .card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.2s;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
+    .card-body {
+        padding: 15px;
+        flex-grow: 1;
+    }
+    .card h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: #28a745;
+    }
+    .card p {
+        margin: 5px 0;
+    }
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        margin-top: 40px;
+    }
+    @media(max-width: 600px) {
+        form {
+            flex-direction: column;
+        }
+        input, select, button {
+            min-width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>Sell Your Property</h1>
+</header>
+<div class="container">
+    <section class="search-section">
+        <h2>Find Your Buyer</h2>
+        <form>
+            <input type="text" placeholder="Location" />
+            <input type="number" placeholder="Min Price" />
+            <input type="number" placeholder="Max Price" />
+            <select>
+                <option>Property Type</option>
+                <option>Apartment</option>
+                <option>House</option>
+                <option>Villa</option>
+                <option>Plot</option>
+            </select>
+            <button type="submit">Search</button>
+        </form>
+    </section>
+    <section>
+        <h2>Your Properties for Sale</h2>
+        <div class="properties">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.2&auto=format&fit=crop&w=800&q=80" alt="Property 1"/>
+                <div class="card-body">
+                    <h3>Luxury Apartment</h3>
+                    <p>Location: Downtown</p>
+                    <p>Price: $250,000</p>
+                    <p>Type: Apartment</p><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Property Details</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #e0f2e9;
+    color: #333;
+  }
+
+  header {
+    background-color: #4CAF50;
+    padding: 20px;
+    color: white;
+    text-align: center;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+  }
+
+  .property-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .main-image {
+    flex: 1 1 45%;
+    min-width: 300px;
+  }
+
+  .main-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .details {
+    flex: 1 1 45%;
+    min-width: 300px;
+  }
+
+  .details h2 {
+    margin-top: 0;
+  }
+
+  .price {
+    font-size: 1.5em;
+    color: #2e7d32;
+    margin-bottom: 10px;
+  }
+
+  .location {
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .description {
+    margin-bottom: 20px;
+  }
+
+  .features {
+    list-style: none;
+    padding: 0;
+  }
+
+  .features li {
+    background-color: #aed581;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+  }
+
+  /* Gallery styles */
+  .gallery {
+    margin-top: 40px;
+  }
+
+  .gallery h3 {
+    margin-bottom: 10px;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .gallery-grid img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Modal styles for enlarged images */
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 999; 
+    padding-top: 60px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+  }
+
+  .close {
+    position: absolute;
+    top: 30px;
+    right: 45px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  @media(max-width: 768px){
+    .property-info {
+      flex-direction: column;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Property Details</h1>
+</header>
+
+<div class="container">
+  <div class="property-info">
+    <div class="main-image">
+      <img src="https://images.unsplash.com/photo-1560185127-6c1a5523716b?ixlib=rb-4.0.0&auto=format&fit=crop&w=800&q=80" alt="Main Property Image" id="mainPropertyImg" />
+    </div>
+    <div class="details">
+      <h2>Luxury Green Villa</h2>
+      <div class="price">$250,000</div>
+      <div class="location"><strong>Location:</strong> Green Valley, California</div>
+      <div class="description">
+        Experience serene living in this beautiful green-themed villa. Spacious rooms, lush gardens, and modern amenities await you.
+      </div>
+      <h3>Features:</h3>
+      <ul class="features">
+        <li>3 Bedrooms</li>
+        <li>2 Bathrooms</li>
+        <li>Swimming Pool</li>
+        <li>Garden & Patio</li>
+        <li>Garage for 2 Cars</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="gallery">
+    <h3>Gallery</h3>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1560185127-6c1a5523716b?ixlib=rb-4.0.0&auto=format&fit=crop&w=150&q=80" alt="Living Room" />
+      <img src="https://images.unsplash.com/photo-1619541398620-4f7e66d4b548?ixlib=rb-4.0.0&auto=format&fit=crop&w=150&q=80" alt="Bedroom" />
+      <img src="https://images.unsplash.com/photo-1577122649339-4891b2007b57?ixlib=rb-4.0.0&auto=format&fit=crop&w=150&q=80" alt="Kitchen" />
+      <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.0&auto=format&fit=crop&w=150&q=80" alt="Garden" />
+    </div>
+  </div>
+</div>
+
+<!-- The Modal for Image Enlargements -->
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg" />
+</div>
+
+<script>
+  // JavaScript for gallery image click to enlarge
+  const galleryImages = document.querySelectorAll('.gallery-grid img');
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeBtn = document.getElementsByClassName("close")[0];
+
+  galleryImages.forEach(img => {
+    img.onclick = () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+    }
+  });
+
+  // Close modal when clicking on 'x'
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+  }
+
+  // Close modal when clicking outside the image
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.2&auto=format&fit=crop&w=800&q=80" alt="Property 2"/>
+                <div class="card-body">
+                    <h3>Spacious Villa</h3>
+                    <p>Location: Suburbs</p>
+                    <p>Price: $850,000</p>
+                    <p>Type: Villa</p>
+                </div>
+            </div>
+            <!-- Add more properties here -->
+        </div>
+    </section>
+</div>
+<footer>
+    &copy; 2025 Property Sales Platform
+</footer>
+</body>
+</html>
