@@ -20,7 +20,7 @@ export default function Page() {
     },
     {
       title: 'Swapna Housing',
-      price: '$₹350,000',
+      price: '₹350,000',
       location: 'Downtown',
     },
     {
