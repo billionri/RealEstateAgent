@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>House Rental</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+    }
+    header {
+        background-color: #28a745;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 20px auto;
+    }
+    h2 {
+        margin-top: 0;
+        color: #28a745;
+    }
+    .search-section {
+        background-color: #fff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    input, select, button {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        flex: 1;
+        min-width: 150px;
+    }
+    button {
+        background-color: #28a745;
+        color: #fff;
+        cursor: pointer;
+        border: none;
+        transition: background-color 0.3s;
+    }
+    button:hover {
+        background-color: #218838;
+    }
+    /* Cards layout for listings */
+    .listings {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    .card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+    .card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+    .card-content {
+        padding: 15px;
+        flex-grow: 1;
+    }
+    .card h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: #28a745;
+    }
+    .card p {
+        margin: 5px 0;
+    }
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        margin-top: 40px;
+    }
+    /* Responsive adjustments */
+    @media(max-width: 600px) {
+        form {
+            flex-direction: column;
+        }
+        input, select, button {
+            min-width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>Rent Your House</h1>
+</header>
+<div class="container">
+    <section class="search-section">
+        <h2>Search for a House</h2>
+        <form>
+            <input type="text" placeholder="Location" />
+            <input type="number" placeholder="Min Price" />
+            <input type="number" placeholder="Max Price" />
+            <select>
+                <option>Any Bedrooms</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4+</option>
+            </select>
+            <button type="submit">Search</button>
+        </form>
+    </section>
+    <section>
+        <h2>Available Houses</h2>
+        <div class="listings">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1560185127-7a6b4a6d7ec9?ixlib=rb-4.0.2&auto=format&fit=crop&w=800&q=80" alt="Family House" />
+                <div class="card-content">
+                    <h3>Beautiful Family House</h3>
+                    <p>Location: Downtown</p>
+                    <p>Price: $1500/month</p>
+                    <p>Bedrooms: 3</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1619792903928-5a9206fd9f4b?ixlib=rb-4.0.2&auto=format&fit=crop&w=800&q=80" alt="Modern Apartment" />
+                <div class="card-content">
+                    <h3>Modern Apartment</h3>
+                    <p>Location: Suburbs</p>
+                    <p>Price: $1200/month</p>
+                    <p>Bedrooms: 2</p>
+                </div>
+            </div>
+            <!-- Add more house cards here -->
+        </div>
+    </section>
+</div>
+<footer>
+    &copy; 2025 House Rental Service
+</footer>
+</body>
+</html>
