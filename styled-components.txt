@@ -1,0 +1,760 @@
+import React from "react";
+import styled from "styled-components";
+
+const StyledVector = styled.div`
+  width: 622.80px;
+  height: 639.43px;
+  left: 173px;
+  top: 192.57px;
+  position: absolute;
+  background: #F4F7FA;
+`;
+
+const StyledVector01 = styled.div`
+  width: 250.71px;
+  height: 424.46px;
+  left: 527.54px;
+  top: 234.62px;
+  position: absolute;
+  background: linear-gradient(32deg, #E38DDD 0%, #9571F6 100%);
+`;
+
+const StyledVector02 = styled.div`
+  width: 192.40px;
+  height: 428.73px;
+  left: 522.92px;
+  top: 217.30px;
+  position: absolute;
+  opacity: 0.80;
+  background: white;
+`;
+
+const StyledVector03 = styled.div`
+  width: 59.56px;
+  height: 84.94px;
+  left: 647.60px;
+  top: 260.58px;
+  position: absolute;
+  opacity: 0.80;
+  background: white;
+`;
+
+const StyledVector04 = styled.div`
+  width: 111.36px;
+  height: 47.13px;
+  left: 693.04px;
+  top: 375.85px;
+  position: absolute;
+  opacity: 0.80;
+  background: white;
+`;
+
+const StyledVector05 = styled.div`
+  width: 48.87px;
+  height: 132.41px;
+  left: 566.54px;
+  top: 448.93px;
+  position: absolute;
+  opacity: 0.80;
+  background: white;
+`;
+
+const StyledVector06 = styled.div`
+  width: 108.38px;
+  height: 54.23px;
+  left: 654.14px;
+  top: 480.80px;
+  position: absolute;
+  opacity: 0.80;
+  background: white;
+`;
+
+const StyledVector07 = styled.div`
+  width: 323.53px;
+  height: 364.08px;
+  left: 477.71px;
+  top: 427.27px;
+  position: absolute;
+  background: linear-gradient(90deg, #FF9085 0%, #FB6FBB 100%);
+`;
+
+const StyledVector08 = styled.div`
+  width: 324.05px;
+  height: 339.66px;
+  left: 458.55px;
+  top: 415.50px;
+  position: absolute;
+  opacity: 0.80;
+  background: white;
+`;
+
+const StyledVector09 = styled.div`
+  width: 28.05px;
+  height: 99.69px;
+  left: 705.64px;
+  top: 434.54px;
+  position: absolute;
+  opacity: 0.80;
+  background: white;
+`;
+
+const StyledVector10 = styled.div`
+  width: 119.03px;
+  height: 16.79px;
+  left: 694.11px;
+  top: 586.05px;
+  position: absolute;
+  opacity: 0.80;
+  background: white;
+`;
+
+const StyledVector11 = styled.div`
+  width: 18.52px;
+  height: 140.59px;
+  left: 565.62px;
+  top: 584.34px;
+  position: absolute;
+  opacity: 0.80;
+  background: white;
+`;
+
+const StyledVector12 = styled.div`
+  width: 119.67px;
+  height: 19.19px;
+  left: 619.59px;
+  top: 675.94px;
+  position: absolute;
+  opacity: 0.80;
+  background: white;
+`;
+
+const StyledVector13 = styled.div`
+  width: 94.36px;
+  height: 95.15px;
+  left: 544.83px;
+  top: 217.55px;
+  position: absolute;
+  background: #D8DEE8;
+`;
+
+const StyledVector14 = styled.div`
+  width: 145.90px;
+  height: 147.11px;
+  left: 387.51px;
+  top: 213.63px;
+  position: absolute;
+  background: #D8DEE8;
+`;
+
+const StyledVector15 = styled.div`
+  width: 338.59px;
+  height: 543.18px;
+  left: 388.43px;
+  top: 273.96px;
+  position: absolute;
+  background: linear-gradient(94deg, #444B8C 0%, #26264F 100%);
+`;
+
+const StyledVector16 = styled.div`
+  width: 340.02px;
+  height: 543.28px;
+  left: 377.20px;
+  top: 273.92px;
+  position: absolute;
+  background: linear-gradient(155deg, #444B8C 0%, #26264F 100%);
+`;
+
+const StyledVector17 = styled.div`
+  width: 318.55px;
+  height: 502.17px;
+  left: 386.26px;
+  top: 303.43px;
+  position: absolute;
+  background: #D8DEE8;
+`;
+
+const StyledVector18 = styled.div`
+  width: 9.50px;
+  height: 9.38px;
+  left: 567.23px;
+  top: 286.52px;
+  position: absolute;
+  background: linear-gradient(160deg, #FFC444 0%, #F36F56 100%);
+`;
+
+const StyledVector19 = styled.div`
+  width: 275.10px;
+  height: 543.28px;
+  left: 442.13px;
+  top: 273.92px;
+  position: absolute;
+  background: white;
+`;
+
+const StyledVector20 = styled.div`
+  width: 177.56px;
+  height: 167.53px;
+  left: 197.29px;
+  top: 256.86px;
+  position: absolute;
+  background: linear-gradient(45deg, #311944 0%, #893976 100%);
+`;
+
+const StyledVector21 = styled.div`
+  width: 172.42px;
+  height: 167.53px;
+  left: 202.65px;
+  top: 253.07px;
+  position: absolute;
+  background: linear-gradient(47deg, #FF9085 0%, #FB6FBB 100%);
+`;
+
+const StyledVector22 = styled.div`
+  width: 144.86px;
+  height: 140.75px;
+  left: 216.43px;
+  top: 266.46px;
+  position: absolute;
+  opacity: 0.50;
+  background: white;
+`;
+
+const StyledVector23 = styled.div`
+  width: 139.86px;
+  height: 100.30px;
+  left: 221.44px;
+  top: 266.46px;
+  position: absolute;
+  opacity: 0.50;
+  background: white;
+`;
+
+const StyledVector24 = styled.div`
+  width: 63.36px;
+  height: 53.69px;
+  left: 257.18px;
+  top: 327.88px;
+  position: absolute;
+  background: white;
+`;
+
+const StyledVector25 = styled.div`
+  width: 58.53px;
+  height: 33.56px;
+  left: 259.62px;
+  top: 292.11px;
+  position: absolute;
+  background: white;
+`;
+
+const StyledVector26 = styled.div`
+  width: 9.09px;
+  height: 17.20px;
+  left: 372.10px;
+  top: 508.66px;
+  position: absolute;
+  background: linear-gradient(242deg, #FFC444 0%, #F36F56 100%);
+`;
+
+const StyledVector27 = styled.div`
+  width: 22.88px;
+  height: 10px;
+  left: 299.08px;
+  top: 808.09px;
+  position: absolute;
+  background: linear-gradient(0deg, #AA80F9 0%, #6165D7 100%);
+`;
+
+const StyledVector28 = styled.div`
+  width: 6.79px;
+  height: 8.22px;
+  left: 298.57px;
+  top: 802.17px;
+  position: absolute;
+  background: linear-gradient(354deg, #FFC444 0%, #F36F56 100%);
+`;
+
+const StyledVector29 = styled.div`
+  width: 22.88px;
+  height: 10px;
+  left: 258.91px;
+  top: 817.33px;
+  position: absolute;
+  background: linear-gradient(0deg, #AA80F9 0%, #6165D7 100%);
+`;
+
+const StyledVector30 = styled.div`
+  width: 6.79px;
+  height: 8.22px;
+  left: 258.41px;
+  top: 811.41px;
+  position: absolute;
+  background: linear-gradient(354deg, #FFC444 0%, #F36F56 100%);
+`;
+
+const StyledVector31 = styled.div`
+  width: 40.14px;
+  height: 190.58px;
+  left: 271.61px;
+  top: 614.35px;
+  position: absolute;
+  background: linear-gradient(223deg, #311944 0%, #893976 100%);
+`;
+
+const StyledVector32 = styled.div`
+  width: 36.52px;
+  height: 190.58px;
+  left: 271.61px;
+  top: 614.35px;
+  position: absolute;
+  opacity: 0.30;
+  background: linear-gradient(269deg, #311944 0%, #893976 100%);
+`;
+
+const StyledVector33 = styled.div`
+  width: 47.22px;
+  height: 196.04px;
+  left: 240.06px;
+  top: 619.41px;
+  position: absolute;
+  background: linear-gradient(269deg, #311944 0%, #893976 100%);
+`;
+
+const StyledVector34 = styled.div`
+  width: 86.73px;
+  height: 78.08px;
+  left: 294.71px;
+  top: 504.87px;
+  position: absolute;
+  background: linear-gradient(188deg, #AA80F9 0%, #6165D7 100%);
+`;
+
+const StyledVector35 = styled.div`
+  width: 105.90px;
+  height: 148.36px;
+  left: 217.54px;
+  top: 502.27px;
+  position: absolute;
+  background: linear-gradient(186deg, #AA80F9 0%, #6165D7 100%);
+`;
+
+const StyledVector36 = styled.div`
+  width: 95.92px;
+  height: 125.20px;
+  left: 217.54px;
+  top: 525.44px;
+  position: absolute;
+  background: linear-gradient(37deg, #AA80F9 0%, #6165D7 100%);
+`;
+
+const StyledVector37 = styled.div`
+  width: 20.52px;
+  height: 8.50px;
+  left: 229.10px;
+  top: 619.94px;
+  position: absolute;
+  background: linear-gradient(163deg, #FFC444 0%, #F36F56 100%);
+`;
+
+const StyledVector38 = styled.div`
+  width: 58.13px;
+  height: 122.41px;
+  left: 190.82px;
+  top: 506.22px;
+  position: absolute;
+  background: linear-gradient(189deg, #AA80F9 0%, #6165D7 100%);
+`;
+
+const StyledVector39 = styled.div`
+  width: 37.94px;
+  height: 26.09px;
+  left: 258.58px;
+  top: 483.74px;
+  position: absolute;
+  background: linear-gradient(331deg, #FFC444 0%, #F36F56 100%);
+`;
+
+const StyledVector40 = styled.div`
+  width: 21.23px;
+  height: 24.39px;
+  left: 268.63px;
+  top: 464.61px;
+  position: absolute;
+  background: linear-gradient(19deg, #444B8C 0%, #3E4177 100%);
+`;
+
+const StyledVector41 = styled.div`
+  width: 15.10px;
+  height: 13.93px;
+  left: 273.40px;
+  top: 478.44px;
+  position: absolute;
+  background: linear-gradient(296deg, #FFC444 0%, #F36F56 100%);
+`;
+
+const StyledVector42 = styled.div`
+  width: 306.71px;
+  height: 385.93px;
+  left: 363.99px;
+  top: 347.41px;
+  position: absolute;
+  background: linear-gradient(90deg, #311944 0%, #893976 100%);
+`;
+
+const StyledVector43 = styled.div`
+  width: 302.07px;
+  height: 379.60px;
+  left: 363.86px;
+  top: 346.81px;
+  position: absolute;
+  background: linear-gradient(356deg, #F36F56 0%, #FFC444 100%);
+`;
+
+const StyledVector44 = styled.div`
+  width: 220.67px;
+  height: 47.26px;
+  left: 405.37px;
+  top: 487.24px;
+  position: absolute;
+  background: white;
+`;
+
+const StyledVector45 = styled.div`
+  width: 220.50px;
+  height: 51.37px;
+  left: 397.57px;
+  top: 544.43px;
+  position: absolute;
+  background: white;
+`;
+
+const StyledVector46 = styled.div`
+  width: 220.67px;
+  height: 39.56px;
+  left: 405.37px;
+  top: 487.24px;
+  position: absolute;
+  opacity: 0.10;
+  background: linear-gradient(90deg, #F36F56 0%, #FFC444 100%);
+`;
+
+const StyledVector47 = styled.div`
+  width: 220.50px;
+  height: 40.98px;
+  left: 397.56px;
+  top: 544.43px;
+  position: absolute;
+  opacity: 0.10;
+  background: linear-gradient(90deg, #F36F56 0%, #FFC444 100%);
+`;
+
+const StyledVector48 = styled.div`
+  width: 127.51px;
+  height: 57.51px;
+  left: 431.64px;
+  top: 624.74px;
+  position: absolute;
+  background: linear-gradient(184deg, #F36F56 0%, #FFC444 100%);
+`;
+
+const StyledVector49 = styled.div`
+  width: 80.19px;
+  height: 79.20px;
+  left: 487.28px;
+  top: 376.61px;
+  position: absolute;
+  background: linear-gradient(178deg, #F36F56 0%, #FFC444 100%);
+`;
+
+const StyledVector50 = styled.div`
+  width: 34.70px;
+  height: 34.26px;
+  left: 511.32px;
+  top: 387.30px;
+  position: absolute;
+  background: white;
+`;
+
+const StyledVector51 = styled.div`
+  width: 57.85px;
+  height: 29.11px;
+  left: 494.69px;
+  top: 426.70px;
+  position: absolute;
+  background: white;
+`;
+
+const StyledVector52 = styled.div`
+  width: 222.24px;
+  height: 379.57px;
+  left: 443.67px;
+  top: 346.81px;
+  position: absolute;
+  opacity: 0.40;
+  background: white;
+`;
+
+const StyledBg = styled.div`
+  width: 788px;
+  height: 940px;
+  left: 1052px;
+  top: 42px;
+  position: absolute;
+  background: white;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+`;
+
+const StyledWelcometorealestateagentshop1span01 = styled.span`
+  color: #2F2F2F;
+  font-size: 36px;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: 48.78px;
+  word-wrap: break-word;
+`;
+
+const StyledWelcometorealestateagentshop1span02 = styled.span`
+  color: #6358DC;
+  font-size: 46px;
+  font-family: Poppins;
+  font-weight: 900;
+  line-height: 62.33px;
+  word-wrap: break-word;
+`;
+
+const StyledForgotpasswordspan = styled.span`
+  color: #6358DC;
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: 21.68px;
+  word-wrap: break-word;
+`;
+
+const StyledRectangle4 = styled.div`
+  width: 671px;
+  height: 77px;
+  left: 1121px;
+  top: 351px;
+  position: absolute;
+  background: #ECECEC;
+  border-radius: 8px;
+`;
+
+const StyledVector53 = styled.div`
+  width: 30px;
+  height: 24px;
+  left: 1144px;
+  top: 380px;
+  position: absolute;
+  background: black;
+`;
+
+const StyledUseridspan = styled.span`
+  color: #2F2F2F;
+  font-size: 12px;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: 16.26px;
+  word-wrap: break-word;
+`;
+
+const StyledExamplegmailcomspan = styled.span`
+  color: #2F2F2F;
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: 700;
+  line-height: 21.68px;
+  word-wrap: break-word;
+`;
+
+const StyledRectangle5 = styled.div`
+  width: 671px;
+  height: 77px;
+  left: 1121px;
+  top: 448px;
+  position: absolute;
+  background: #ECECEC;
+  border-radius: 8px;
+`;
+
+const StyledVector54 = styled.div`
+  width: 27px;
+  height: 27px;
+  left: 1147px;
+  top: 475px;
+  position: absolute;
+  background: black;
+`;
+
+const StyledPasswordspan = styled.span`
+  color: #2F2F2F;
+  font-size: 12px;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: 16.26px;
+  word-wrap: break-word;
+`;
+
+const StyledSpan = styled.span`
+  color: #2F2F2F;
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: 700;
+  line-height: 21.68px;
+  word-wrap: break-word;
+`;
+
+const StyledVector55 = styled.div`
+  width: 6.88px;
+  height: 6.88px;
+  left: 7.56px;
+  top: 7.56px;
+  position: absolute;
+  background: #2F2F2F;
+`;
+
+const StyledVector56 = styled.div`
+  width: 22px;
+  height: 15.12px;
+  left: 0px;
+  top: 3.44px;
+  position: absolute;
+  background: #2F2F2F;
+`;
+
+const StyledRectangle6 = styled.div`
+  width: 671px;
+  height: 77px;
+  left: 1126px;
+  top: 758px;
+  position: absolute;
+  background: #6358DC;
+  border-radius: 8px;
+`;
+
+const StyledLogin01span = styled.span`
+  color: white;
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: 21.68px;
+  word-wrap: break-word;
+`;
+
+const StyledRemembermespan = styled.span`
+  color: #2F2F2F;
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: 21.68px;
+  word-wrap: break-word;
+`;
+
+const StyledCheck = styled.div`
+  width: 18px;
+  height: 18px;
+  left: 1128px;
+  top: 714px;
+  position: absolute;
+  background: #ECECEC;
+  border-radius: 4px;
+  border: 1px #D9D9D9 solid;
+`;
+
+const StyledBieyefill = styled.div`
+  width: 22px;
+  height: 22px;
+  left: 1749px;
+  top: 480px;
+  position: absolute;
+  overflow: hidden;
+`;
+
+const StyledLogin = styled.div`
+  width: 1920px;
+  height: 1024px;
+  position: relative;
+  background: #F4F4F4;
+  overflow: hidden;
+`;
+
+export const Login = () => {
+  return (
+    <StyledLogin>
+      <StyledVector />
+      <StyledVector01 />
+      <StyledVector02 />
+      <StyledVector03 />
+      <StyledVector04 />
+      <StyledVector05 />
+      <StyledVector06 />
+      <StyledVector07 />
+      <StyledVector08 />
+      <StyledVector09 />
+      <StyledVector10 />
+      <StyledVector11 />
+      <StyledVector12 />
+      <StyledVector13 />
+      <StyledVector14 />
+      <StyledVector15 />
+      <StyledVector16 />
+      <StyledVector17 />
+      <StyledVector18 />
+      <StyledVector19 />
+      <StyledVector20 />
+      <StyledVector21 />
+      <StyledVector22 />
+      <StyledVector23 />
+      <StyledVector24 />
+      <StyledVector25 />
+      <StyledVector26 />
+      <StyledVector27 />
+      <StyledVector28 />
+      <StyledVector29 />
+      <StyledVector30 />
+      <StyledVector31 />
+      <StyledVector32 />
+      <StyledVector33 />
+      <StyledVector34 />
+      <StyledVector35 />
+      <StyledVector36 />
+      <StyledVector37 />
+      <StyledVector38 />
+      <StyledVector39 />
+      <StyledVector40 />
+      <StyledVector41 />
+      <StyledVector42 />
+      <StyledVector43 />
+      <StyledVector44 />
+      <StyledVector45 />
+      <StyledVector46 />
+      <StyledVector47 />
+      <StyledVector48 />
+      <StyledVector49 />
+      <StyledVector50 />
+      <StyledVector51 />
+      <StyledVector52 />
+      <StyledBg />
+      <StyledWelcometoRealEstateAgentShop1><StyledWelcometorealestateagentshop1span01>Welcome to<br/></StyledWelcometorealestateagentshop1span01><StyledWelcometorealestateagentshop1span02>Real Estate Agent: Shop1</StyledWelcometorealestateagentshop1span02></StyledWelcometoRealEstateAgentShop1>
+      <StyledForgotPassword>Forgot Password?</StyledForgotPassword>
+      <StyledRectangle4 />
+      <StyledVector53 />
+      <StyledUserID>User ID</StyledUserID>
+      <StyledExamplegmailcom>example@gmail.com</StyledExamplegmailcom>
+      <StyledRectangle5 />
+      <StyledVector54 />
+      <StyledPassword>Password</StyledPassword>
+      <StyledP>***********</StyledP>
+      <StyledBieyefill>
+        <StyledVector55 />
+        <StyledVector56 />
+      </StyledBieyefill>
+      <StyledRectangle6 />
+      <StyledLogin01>Login</StyledLogin01>
+      <StyledRememberme>Remember me</StyledRememberme>
+      <StyledCheck />
+    </StyledLogin>
+  );
+};
