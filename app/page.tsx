@@ -1,46 +1,46 @@
 ﻿'use client'
-
-import Link from "next/link";
-import { log } from "node:console";
-import { EventEmitter } from "node:stream";
-import { SyntheticModule } from "node:vm";
-import { ChangeEvent, useEffect, useState } from "react";
-
+import { ChangeEvent, useState } from "react";
+import Image from 'next/image'
 export default function Page() {
   const dummyProperties = [
     {
       title: 'Sneh Sadan',
       price: '₹250,000',
       location: 'Countryside',
+      thumbnail: '/property_images/prop.jpg'
     },
     {
       title: 'Sant Ekdant',
       price: '₹550,000',
       location: 'City Center',
+      thumbnail: '/property_images/prop1.jpg'
     },
     {
       title: 'Swapna Housing',
       price: '₹350,000',
       location: 'Downtown',
+      thumbnail: '/property_images/prop2.jpg'
     },
     {
       title: 'Shanti Niketan',
       price: '₹1,200,000',
       location: 'Suburbs',
+      thumbnail: '/property_images/prop3.jpg'
     },
     {
       title: 'Rubi',
       price: '₹400,000',
       location: 'Urban Area',
+      thumbnail: '/property_images/prop4.jpg'
     },
     {
       title: 'Trinity',
       price: '₹300,000',
       location: 'Near Park',
+      thumbnail: '/property_images/prop.jpg'
     },
   ];
   const [properties, setProperties] = useState(dummyProperties);
-  const [recommendations,setRecommendations] = useState<String[] | null>(null);
 
   function searchChangeHandler(event: ChangeEvent<HTMLInputElement>): void {
     if(!event.target.value) {
@@ -48,20 +48,13 @@ export default function Page() {
       return;
     };
 
-    const filteredProperties = properties.filter(property=>{
+    const filteredProperties = dummyProperties.filter(property=>{
       return property.title.includes(event.target.value) || property.title.toLowerCase().includes(event.target.value);
     });
 
     console.log(filteredProperties);
     setProperties(filteredProperties);
   } 
-
-  function searchClickHandler(event): void {
-    const selectedProperty = properties.filter(item=> item.title === event.target.textContent);
-    console.log(selectedProperty);
-    
-    setProperties(selectedProperty);
-  }
 
   return (
     <>
@@ -76,41 +69,7 @@ export default function Page() {
           color: #374151; /* Darker gray for text */
         }
 
-        .header {
-          width: 100%;
-          height: 64px;
-          background-color: #ffffff;
-          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-          position: sticky;
-          top: 0;
-          left: 0;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 0 24px;
-          z-index: 10;
-        }
 
-        .header-title {
-          font-weight: 700;
-          font-size: 24px;
-          color: #111827; /* Almost black */
-        }
-
-        .nav-links {
-          display: flex;
-          gap: 24px;
-          font-weight: 500;
-          color: #10b981; /* Emerald green */
-          cursor: pointer;
-          font-size: 16px;
-          user-select: none;
-          transition: color 0.3s ease;
-        }
-
-        .nav-links:hover {
-          color: #047857; /* Darker emerald */
-        }
 
         .content {
           width: 100%;
@@ -229,42 +188,25 @@ export default function Page() {
         }
       `}</style>
 
-   <header className="header">
-        <div className="header-title">Real Estate Agent</div>
-        <nav className="nav-links">
-            <Link href="/buy">Buy</Link>
-            <Link href="/sell">Sell</Link>
-            <Link href="/rent">Rent</Link>
-            {/* <Link href="/profile">Profile</Link> */}
-            <Link href="/login">Login</Link>
-        </nav>
-    </header>
-
     <div className="page-container">
     <main className="content">
       <div className="relative">
         <input  onChange={searchChangeHandler} type="search" className="search-bar mt-4" placeholder="Search properties..."/>
-
-        {/* {recommendations && recommendations.length > 0 &&
-         <ul className="absolute top-full left-0 w-full bg-white  border-[1px] border-[#d1d5db] z-[9] shadow-[0px_3px_5px_0px_#0000006b]">
-            {recommendations.map((item,index)=>{
-              
-
-              return (<li className="first-of-type:border-t-0 last-of-type:border-b-0 border-t-[1px]" key={index}>
-                <button onClick={searchClickHandler} className="w-full text-left px-4 py-1 cursor-pointer">{item}</button>
-              </li>)
-            })}
-          </ul>
-        } */}
       </div>
 
         <h1 className="title">Available Properties</h1>
 
         <div className="cards-container">
-        {properties && properties.map(({ title, price, location }) => (
+        {properties && properties.map(({ title, price, location ,thumbnail}) => (
             <div key={title} className="card">
-            <div className="card-image">
-                <div className="image-placeholder" />
+            <div className="card-image w-full ">
+                <Image
+                  src={thumbnail}
+                  className="object-cover w-full h-full"
+                  alt={title}
+                  width={500}
+                  height={300}
+                />
             </div>
             <div className="card-content">
                 <div className="title-property">{title}</div>
@@ -276,21 +218,6 @@ export default function Page() {
         ))}
         { properties.length === 0 && (
           <div className="w-full h-[250px] flex flex-col items-center justify-center text-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-10 w-10 text-gray-400 mb-3"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9.75 9.75L14.25 14.25M9.75 14.25L14.25 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
             <p className="text-gray-500 text-lg font-medium">No properties found</p>
             <p className="text-gray-400 text-sm mt-1">Try looking up something else</p>
           </div>
