@@ -1,6 +1,7 @@
 ﻿'use client'
 import { ChangeEvent, useState } from "react";
-import Image from 'next/image'
+import Image from 'next/image';
+import Link from 'next/link';
 export default function Page() {
   const dummyProperties = [
     {
@@ -212,7 +213,7 @@ export default function Page() {
                 <div className="title-property">{title}</div>
                 <div className="price">{price}</div>
                 <div className="location">Location: {location}</div>
-                <div className="view-details-btn">View Details</div>
+                <Link href="/details" className="view-details-btn">View Details</Link>
             </div>
             </div>
         ))}

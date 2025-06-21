@@ -8,8 +8,11 @@ const BuyForm: React.FC = () => {
   };
 
   return (
+    <>
+    <header className="bg-green-600 text-white py-6 text-center">
+      <h1 className="text-3xl font-semibold">Buy A House</h1>
+    </header>
     <div className="w-[80%] md:w-[95%] max-w-3xl mx-auto mt-6 mb-10 bg-white p-6 rounded-lg shadow-md">
-      <h1 className="text-2xl font-semibold text-center text-gray-800 mb-6">Buy Property</h1>
       <form className="flex flex-col">
         <label htmlFor="name" className="text-gray-700 mt-2">Your Name:</label>
         <input
@@ -105,6 +108,7 @@ const BuyForm: React.FC = () => {
         />
       </form>
     </div>
+  </>
   );
 };
 
