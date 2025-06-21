@@ -4,19 +4,19 @@ import { useState } from 'react';
 
 const galleryImages = [
   {
-    src: 'https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.0&auto=format&fit=crop&w=150&q=80',
+    src: '/property_images/modern-apartment.jpg',
     alt: 'Living Room',
   },
   {
-    src: 'https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.0&auto=format&fit=crop&w=150&q=80',
+    src: '/property_images/family-home.jpg',
     alt: 'Bedroom',
   },
   {
-    src: 'https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.0&auto=format&fit=crop&w=150&q=80',
+    src: '/property_images/prop4.jpg',
     alt: 'Kitchen',
   },
   {
-    src: 'https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.0&auto=format&fit=crop&w=150&q=80',
+    src: '/property_images/prop3.jpg',
     alt: 'Garden',
   },
 ];
@@ -44,7 +44,7 @@ export default function PropertyDetails() {
         <div className="flex flex-col md:flex-row gap-8">
           <div className="md:w-1/2">
             <img
-              src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.0&auto=format&fit=crop&w=150&q=80"
+              src="/property_images/prop1.jpg"
               alt="Main Property"
               className="rounded-lg w-full"
             />
@@ -52,7 +52,7 @@ export default function PropertyDetails() {
 
           <div className="md:w-1/2">
             <h2 className="text-2xl font-bold mb-2">Luxury Green Villa</h2>
-            <div className="text-xl text-green-700 mb-2">$250,000</div>
+            <div className="text-xl text-green-700 mb-2">₹250,000</div>
             <div className="italic mb-4">Location: Green Valley, California</div>
             <p className="mb-4">
               Experience serene living in this beautiful green-themed villa. Spacious rooms, lush gardens, and modern amenities await you.
@@ -76,7 +76,7 @@ export default function PropertyDetails() {
                 src={img.src}
                 alt={img.alt}
                 onClick={() => openModal(img.src)}
-                className="rounded cursor-pointer hover:scale-105 transition-transform"
+                className="h-full rounded cursor-pointer hover:scale-105 transition-transform"
               />
             ))}
           </div>
