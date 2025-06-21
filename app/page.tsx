@@ -1,6 +1,7 @@
 ﻿'use client'
 import { ChangeEvent, useState } from "react";
-import Image from 'next/image'
+import Image from 'next/image';
+import Link from 'next/link';
 export default function Page() {
   const dummyProperties = [
     {
@@ -116,7 +117,6 @@ export default function Page() {
           overflow: hidden;
           display: flex;
           flex-direction: column;
-          cursor: pointer;
           transition: box-shadow 0.3s ease;
         }
 
@@ -212,7 +212,7 @@ export default function Page() {
                 <div className="title-property">{title}</div>
                 <div className="price">{price}</div>
                 <div className="location">Location: {location}</div>
-                <div className="view-details-btn">View Details</div>
+                <Link href="/details" className="view-details-btn bg-emerald-500 hover:bg-emerald-700 text-white px-4 py-2 rounded-[8px] w-max transition-colors">View Details</Link>
             </div>
             </div>
         ))}
