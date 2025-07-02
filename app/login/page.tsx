@@ -23,9 +23,9 @@ const LoginForm = () => {
               User ID
             </label>
             <input
-              type="email"
+              type="text"
               id="userId"
-              placeholder="example@gmail.com"
+              placeholder="username"
               className="h-12 px-3 border border-gray-300 rounded-md text-base"
             />
           </div>

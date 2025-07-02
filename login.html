@@ -4,6 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Real Estate Agent Login</title>
+<!-- Add this in your HTML <head> or before </body> -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <style>
   body {
     margin: 0;
@@ -84,7 +87,7 @@
 
 <div class="login-container">
   <h2>Agent Login</h2>
-  <form id="loginForm" onsubmit="return validateForm()">
+  <form id="loginForm" >
     <label for="email">Email Address</label>
     <input type="text" id="email" name="email" placeholder="Enter your email" required />
 
@@ -99,6 +102,24 @@
 </div>
 
 <script>
+
+$(document).ready(function () {
+    alert();
+    $('#loginForm').on('submit', function (e) {
+      e.preventDefault(); // prevent form submission
+
+      const email = $('#email').val();
+      const password = $('#password').val();
+
+      // Replace with your desired credentials
+      if (email === 'admin' && password === 'admin') {
+        // Redirect to homepage
+        window.location.href = '/';
+      } else {
+        alert('Invalid username or password');
+      }
+    });
+
   function validateForm() {
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
@@ -107,15 +128,6 @@
       alert("Please fill in both fields");
       return false;
     }
-    // Basic email validation
-    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    if (!email.match(emailPattern)) {
-      alert("Please enter a valid email address");
-      return false;
-    }
-    // Here you can add further validation or send data to server
-    alert('Login successful! (This is a mockup)');
-    return false;  // Remove or replace with actual login logic
   }
 </script>
 
