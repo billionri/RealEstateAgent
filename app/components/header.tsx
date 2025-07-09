@@ -9,7 +9,7 @@ const Header = () => {
         <Link href="/buy" className="hover:text-emerald-700 transition-colors duration-300">Buy</Link>
         <Link href="/sell" className="hover:text-emerald-700 transition-colors duration-300">Sell</Link>
         <Link href="/rent" className="hover:text-emerald-700 transition-colors duration-300">Rent</Link>
-        <Link href="/customers" className="hover:text-emerald-700 transition-colors duration-300">Customers</Link>
+        <Link href="/customers_list" className="hover:text-emerald-700 transition-colors duration-300">Customers</Link>
         <Link href="/broker" className="hover:text-emerald-700 transition-colors duration-300">Broker</Link>
 
         {/* <Link href="/profile" className="hover:text-emerald-700 transition-colors duration-300">Profile</Link> */}
