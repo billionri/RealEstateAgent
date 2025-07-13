@@ -8,5 +8,5 @@ run following command: Go to
 
 `
 cd fastapi_real_estate 
-uv app::app --reload
+uvicorn main:app --reload
 `
