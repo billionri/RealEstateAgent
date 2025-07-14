@@ -194,7 +194,7 @@ export default function Page() {
         <input  onChange={searchChangeHandler} type="search" className="search-bar mt-4" placeholder="Search properties..."/>
       </div>
 
-        <h1 className="title">Available Properties</h1>
+        <h1 className="title">Available Properties <Link href="/" className="">Add Property</Link></h1>
 
         <div className="cards-container">
         {properties && properties.map(({ title, price, location ,thumbnail}) => (
@@ -212,7 +212,7 @@ export default function Page() {
                 <div className="title-property">{title}</div>
                 <div className="price">{price}</div>
                 <div className="location">Location: {location}</div>
-                <Link href="/details" className="view-details-btn bg-emerald-500 hover:bg-emerald-700 text-white px-4 py-2 rounded-[8px] w-max transition-colors">View Details</Link>
+                <Link href="/details" className="view-details-btn primary-btn">View Details</Link>
             </div>
             </div>
         ))}

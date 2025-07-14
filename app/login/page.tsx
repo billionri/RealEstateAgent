@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const LoginForm = () => {
@@ -23,9 +24,9 @@ const LoginForm = () => {
               User ID
             </label>
             <input
-              type="email"
+              type="text"
               id="userId"
-              placeholder="example@gmail.com"
+              placeholder="JohnDoe123"
               className="h-12 px-3 border border-gray-300 rounded-md text-base"
             />
           </div>
@@ -52,12 +53,12 @@ const LoginForm = () => {
             </a>
           </div>
 
-          <button
+          <Link href="/"
             type="submit"
-            className="h-12 bg-[#10b981] text-white rounded-md text-base font-semibold font-poppins hover:bg-[#5548c7] transition-colors"
+            className="flex items-center justify-center h-12 bg-emerald-500 hover:bg-emerald-700 text-white rounded-md text-base font-semibold font-poppins hover:bg-[#5548c7] transition-colors"
           >
             Login
-          </button>
+          </Link>
         </form>
       </div>
     </div>
