@@ -1,76 +1,53 @@
-﻿'use client'
-import { ChangeEvent, useState } from "react";
+﻿'use client';
+import { useEffect, ChangeEvent, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+
+type Property = {
+  property_id: number;
+  title: string;
+  price: number;
+  location: string;
+  main_image_url: string;
+};
+
 export default function Page() {
-  const dummyProperties = [
-    {
-      title: 'Sneh Sadan',
-      price: '₹250,000',
-      location: 'Countryside',
-      thumbnail: '/property_images/prop.jpg'
-    },
-    {
-      title: 'Sant Ekdant',
-      price: '₹550,000',
-      location: 'City Center',
-      thumbnail: '/property_images/prop1.jpg'
-    },
-    {
-      title: 'Swapna Housing',
-      price: '₹350,000',
-      location: 'Downtown',
-      thumbnail: '/property_images/prop2.jpg'
-    },
-    {
-      title: 'Shanti Niketan',
-      price: '₹1,200,000',
-      location: 'Suburbs',
-      thumbnail: '/property_images/prop3.jpg'
-    },
-    {
-      title: 'Rubi',
-      price: '₹400,000',
-      location: 'Urban Area',
-      thumbnail: '/property_images/prop4.jpg'
-    },
-    {
-      title: 'Trinity',
-      price: '₹300,000',
-      location: 'Near Park',
-      thumbnail: '/property_images/prop.jpg'
-    },
-  ];
-  const [properties, setProperties] = useState(dummyProperties);
+  const [properties, setProperties] = useState<Property[]>([]);
+  const [allProperties, setAllProperties] = useState<Property[]>([]);
 
-  function searchChangeHandler(event: ChangeEvent<HTMLInputElement>): void {
-    if(!event.target.value) {
-      setProperties(dummyProperties);
-      return;
-    };
+  useEffect(() => {
+    fetch("http://localhost:8000/api/properties/")
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+        return res.json();
+      })
+      .then((data: Property[]) => {
+        setProperties(data);
+        setAllProperties(data);
+      })
+      .catch((err) => console.error('Failed to fetch properties:', err));
+  }, []);
 
-    const filteredProperties = dummyProperties.filter(property=>{
-      return property.title.includes(event.target.value) || property.title.toLowerCase().includes(event.target.value);
-    });
-
-    console.log(filteredProperties);
-    setProperties(filteredProperties);
-  } 
+  function searchChangeHandler(event: ChangeEvent<HTMLInputElement>) {
+    const search = event.target.value.toLowerCase();
+    if (!search) return setProperties(allProperties);
+    const filtered = allProperties.filter((p) =>
+      p.title.toLowerCase().includes(search)
+    );
+    setProperties(filtered);
+  }
 
   return (
     <>
       <style jsx>{`
-        /* Custom Styles */
         .page-container {
           max-width: 1265px;
           width: 100%;
           margin: 0 auto;
           position: relative;
           font-family: 'Roboto', sans-serif;
-          color: #374151; /* Darker gray for text */
+          color: #374151;
         }
-
-
 
         .content {
           width: 100%;
@@ -91,7 +68,6 @@ export default function Page() {
           font-size: 16px;
           margin-bottom: 24px;
           box-sizing: border-box;
-          user-select: none;
         }
 
         .title {
@@ -126,19 +102,8 @@ export default function Page() {
 
         .card-image {
           height: 160px;
-          background: linear-gradient(90deg, #e5e7eb, #9ca3af); /* subtle gradient */
+          background: linear-gradient(90deg, #e5e7eb, #9ca3af);
           position: relative;
-        }
-
-        .image-placeholder {
-          position: absolute;
-          width: 233px;
-          height: 25px;
-          background: #6b7280;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          border-radius: 4px;
         }
 
         .card-content {
@@ -169,62 +134,75 @@ export default function Page() {
           margin-bottom: 12px;
         }
 
-        .view-details-btn {
+         .view-details-btn {
           width: 120px;
           height: 40px;
-          background-color: #10b981;
+          background-color: #10b981; /* Emerald green */
           border-radius: 6px;
-          color: white;
+          color: white;              /* ✅ Fix: make text visible */
           font-size: 16px;
           font-weight: 500;
           text-align: center;
           line-height: 40px;
           user-select: none;
           transition: background-color 0.3s ease;
+          display: inline-block;
+          text-decoration: none;
         }
 
         .view-details-btn:hover {
-          background-color: #059669;
+          background-color: #059669; /* Darker green on hover */
         }
+
       `}</style>
 
-    <div className="page-container">
-    <main className="content">
-      <div className="relative">
-        <input  onChange={searchChangeHandler} type="search" className="search-bar mt-4" placeholder="Search properties..."/>
-      </div>
-
-        <h1 className="title">Available Properties</h1>
-
-        <div className="cards-container">
-        {properties && properties.map(({ title, price, location ,thumbnail}) => (
-            <div key={title} className="card">
-            <div className="card-image w-full ">
-                <Image
-                  src={thumbnail}
-                  className="object-cover w-full h-full"
-                  alt={title}
-                  width={500}
-                  height={300}
-                />
-            </div>
-            <div className="card-content">
-                <div className="title-property">{title}</div>
-                <div className="price">{price}</div>
-                <div className="location">Location: {location}</div>
-                <Link href="/details" className="view-details-btn bg-emerald-500 hover:bg-emerald-700 text-white px-4 py-2 rounded-[8px] w-max transition-colors">View Details</Link>
-            </div>
-            </div>
-        ))}
-        { properties.length === 0 && (
-          <div className="w-full h-[250px] flex flex-col items-center justify-center text-center">
-            <p className="text-gray-500 text-lg font-medium">No properties found</p>
-            <p className="text-gray-400 text-sm mt-1">Try looking up something else</p>
+      <div className="page-container">
+        <main className="content">
+          <div className="relative">
+            <input
+              onChange={searchChangeHandler}
+              type="search"
+              className="search-bar mt-4"
+              placeholder="Search properties..."
+            />
           </div>
-        )}
-        </div>
-    </main>
-    </div>
+
+          <h1 className="title">Available Properties</h1>
+
+          <div className="cards-container">
+            {properties.map(({ property_id, title, price, location }) => (
+              <div key={property_id} className="card">
+                <div className="card-image w-full">
+                  <Image
+                    src={`/property_images/${property_id}.jpg`}
+                    alt={title}
+                    width={500}
+                    height={300}
+                    className="object-cover w-full h-full"
+                />
+                </div>
+                <div className="card-content">
+                  <div className="title-property">{title}</div>
+                  <div className="price">₹{price.toLocaleString()}</div>
+                  <div className="location">Location: {location}</div>
+                  <Link
+                    href={`/details/${property_id}`}
+                    className="view-details-btn"
+                  >
+                    View Details
+                  </Link>
+                </div>
+              </div>
+            ))}
+            {properties.length === 0 && (
+              <div className="w-full h-[250px] flex flex-col items-center justify-center text-center">
+                <p className="text-gray-500 text-lg font-medium">No properties found</p>
+                <p className="text-gray-400 text-sm mt-1">Try looking up something else</p>
+              </div>
+            )}
+          </div>
+        </main>
+      </div>
     </>
   );
 }

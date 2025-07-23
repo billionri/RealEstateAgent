@@ -1,44 +1,72 @@
-import React from 'react';
+﻿'use client';
+import React, { useState } from 'react';
 
 const LoginForm = () => {
+  const [userId, setUserId] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+
+    const res = await fetch('http://localhost:8000/api/users/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username: userId, password }),
+    });
+
+    if (!res.ok) {
+      const data = await res.json();
+      setError(data.detail || 'Login failed');
+    } else {
+      const data = await res.json();
+      alert('✅ Login successful!');
+      console.log('User ID:', data.user_id);
+    }
+  };
+
   return (
     <div className="flex h-screen bg-gray-100">
       {/* Left Pane */}
       <div className="flex-1 bg-gradient-to-br from-[#311944] to-[#10b981] flex items-center justify-center">
-        {/* You can add a logo or graphic here */}
+        {/* Logo or graphic */}
       </div>
 
       {/* Right Pane */}
-      <div className="flex-1 bg-white p-20 flex flex-col justify-center shadow-md rounded-md">
-        <h1 className="font-poppins text-3xl md:text-4xl font-medium mb-10 text-gray-800">
-          Welcome to<br />
-          <span className="text-4xl md:text-5xl font-extrabold text-[#10b981]">
-            Real Estate Agent: Shop1
-          </span>
+      <div className="flex-1 bg-white p-20 flex flex-col justify-center shadow-md rounded-md relative z-10">
+        <h1 className="text-4xl font-extrabold text-[#10b981] mb-6">
+          Real Estate Agent: Shop1
         </h1>
 
-        <form className="flex flex-col gap-5">
-          <div className="flex flex-col">
-            <label htmlFor="userId" className="text-xs text-gray-800 mb-1 font-poppins">
+        <form className="flex flex-col gap-5" onSubmit={handleLogin}>
+          <div>
+            <label htmlFor="userId" className="text-xs text-gray-800 mb-1 block">
               User ID
             </label>
             <input
               type="text"
               id="userId"
+              value={userId}
+              onChange={(e) => setUserId(e.target.value)}
               placeholder="username"
-              className="h-12 px-3 border border-gray-300 rounded-md text-base"
+              className="h-12 px-3 border border-gray-300 rounded-md w-full"
+              required
             />
           </div>
 
-          <div className="flex flex-col">
-            <label htmlFor="password" className="text-xs text-gray-800 mb-1 font-poppins">
+          <div>
+            <label htmlFor="password" className="text-xs text-gray-800 mb-1 block">
               Password
             </label>
             <input
               type="password"
               id="password"
-              placeholder="***********"
-              className="h-12 px-3 border border-gray-300 rounded-md text-base"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="********"
+              className="h-12 px-3 border border-gray-300 rounded-md w-full"
+              required
             />
           </div>
 
@@ -52,9 +80,13 @@ const LoginForm = () => {
             </a>
           </div>
 
+          {error && (
+            <p className="text-red-500 text-sm text-center">{error}</p>
+          )}
+
           <button
             type="submit"
-            className="h-12 bg-[#10b981] text-white rounded-md text-base font-semibold font-poppins hover:bg-[#5548c7] transition-colors"
+            className="h-12 bg-[#10b981] text-white rounded-md font-semibold hover:bg-[#059669] transition-colors"
           >
             Login
           </button>

@@ -97,3 +97,4 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/windows,react,nextjs,linux
 *.vsidx
 *.pyc
+/.vs

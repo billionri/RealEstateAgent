@@ -1,11 +1,19 @@
-from fastapi import FastAPI
+﻿from fastapi import FastAPI
 from routers import customers, interested_customers, brokers, users, properties, enquiries, features, images
 from database import Base, engine
-
-
-
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="Real Estate FastAPI")
+
+ 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # Only allow frontend
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # Create tables
 Base.metadata.create_all(bind=engine)
