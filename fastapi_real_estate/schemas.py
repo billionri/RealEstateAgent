@@ -11,8 +11,9 @@ class CustomerOut(CustomerCreate):
     customer_id: int
     created_at: datetime
 
-    class Config:
-        orm_mode = True
+    model_config = {
+        "from_attributes": True
+    }
 
 
 
@@ -30,8 +31,9 @@ class InterestedCustomerOut(InterestedCustomerBase):
     id: int
     date_submitted: datetime
 
-    class Config:
-        orm_mode = True
+    model_config = {
+        "from_attributes": True
+    }
 
 
 class PropertyBrokerBase(BaseModel):
@@ -47,8 +49,9 @@ class PropertyBrokerOut(PropertyBrokerBase):
     id: int
     date_created: datetime
 
-    class Config:
-        orm_mode = True
+    model_config = {
+        "from_attributes": True
+    }
 
 
 class UserBase(BaseModel):
@@ -59,8 +62,9 @@ class UserOut(UserBase):
     user_id: int
     created_at: datetime
 
-    class Config:
-        orm_mode = True
+    model_config = {
+        "from_attributes": True
+    }
 
 
 class CustomerEnquiryBase(BaseModel):
@@ -79,8 +83,9 @@ class CustomerEnquiryOut(CustomerEnquiryBase):
     request_id: int
     submitted_at: Optional[date]
 
-    class Config:
-        orm_mode = True
+    model_config = {
+        "from_attributes": True
+    }
 
 
 class PropertyBase(BaseModel):
@@ -101,8 +106,9 @@ class PropertyOut(PropertyBase):
     property_id: int
     listed_at: Optional[date]
 
-    class Config:
-        orm_mode = True
+    model_config = {
+        "from_attributes": True
+    }
 
 
 class PropertyFeatureBase(BaseModel):
@@ -112,8 +118,9 @@ class PropertyFeatureBase(BaseModel):
 class PropertyFeatureOut(PropertyFeatureBase):
     feature_id: int
 
-    class Config:
-        orm_mode = True
+    model_config = {
+        "from_attributes": True
+    }
 
 
 class PropertyImageBase(BaseModel):
@@ -124,5 +131,6 @@ class PropertyImageBase(BaseModel):
 class PropertyImageOut(PropertyImageBase):
     image_id: int
 
-    class Config:
-        orm_mode = True
+    model_config = {
+        "from_attributes": True
+    }

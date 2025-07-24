@@ -4,7 +4,7 @@ from models import User
 from schemas import UserBase, UserOut
 from database import SessionLocal
 from pydantic import BaseModel
-from passlib.hash import bcrypt
+#from passlib.hash import bcrypt
 
 router = APIRouter()
 
@@ -19,12 +19,12 @@ def get_db():
     finally:
         db.close()
 
-@router.post("/login")
-def login(request: LoginRequest, db: Session = Depends(get_db)):
-    user = db.query(User).filter(User.email == request.email).first()
-    if not user or not bcrypt.verify(request.password, user.password):
-        raise HTTPException(status_code=401, detail="Invalid credentials")
-    return {"message": "Login successful", "user_id": user.user_id}
+#@router.post("/login")
+#def login(request: LoginRequest, db: Session = Depends(get_db)):
+#    user = db.query(User).filter(User.email == request.email).first()
+#    if not user or not bcrypt.verify(request.password, user.password):
+#        raise HTTPException(status_code=401, detail="Invalid credentials")
+#    return {"message": "Login successful", "user_id": user.user_id}
 
 @router.post("/", response_model=UserOut)
 def create_user(user: UserBase, db: Session = Depends(get_db)):
