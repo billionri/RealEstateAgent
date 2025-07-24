@@ -15,4 +15,4 @@ https://www.loom.com/share/965dd5dd438e4ddd85fbcf9d1ec3d974?sid=41dacb57-fd1c-4e
 
 
 	
-![Apis Screenshot](API_ss_.png)
+![Apis Screenshot](/API_ss.png)
