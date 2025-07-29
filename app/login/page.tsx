@@ -1,6 +1,21 @@
 ﻿'use client';
 import React, { useState } from 'react';
 
+export async function  sendRequest(method : string, url: string, body: any) {
+  const response =  await fetch(url, {
+    method,
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+  
+  if (!response.ok) {
+    throw new Error(response.statusText);
+  }
+
+  const parsedResponse = await response.json();
+  return parsedResponse;
+}
+
 const LoginForm = () => {
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
@@ -13,7 +28,7 @@ const LoginForm = () => {
     const res = await fetch('http://localhost:8000/api/users/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username: userId, password }),
+      body: JSON.stringify({ email: userId, password }),
     });
 
     if (!res.ok) {
