@@ -12,7 +12,7 @@ import base64
 router = APIRouter()
 
 # AES KEY (must be 16/24/32 bytes)
-AES_KEY = b"ThisIsA16ByteKey"
+AES_KEY = b"RealEstateShop1"
 
 def pad(text):
     return text + (16 - len(text) % 16) * chr(16 - len(text) % 16)
