@@ -29,6 +29,7 @@ def list_images(db: Session = Depends(get_db)):
 @router.get("/{image_id}", response_model=PropertyImageOut)
 def get_image(image_id: int, db: Session = Depends(get_db)):
     img = db.query(PropertyImage).filter(PropertyImage.image_id == image_id).first()
+    print(img)
     if not img:
         raise HTTPException(status_code=404, detail="Image not found")
     return img
