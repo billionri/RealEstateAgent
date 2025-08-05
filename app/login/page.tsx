@@ -1,4 +1,5 @@
 ﻿'use client';
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 export async function  sendRequest(method : string, url: string, body: any) {
@@ -105,6 +106,12 @@ const LoginForm = () => {
           >
             Login
           </button>
+
+          <p className="text-center text-sm mt-4">
+            Don't have an account?{" "}
+            <Link href="/register" className="text-[#10b981] hover:text-[#059669] transition-colors">Sign Up</Link>
+          </p>
+           
         </form>
       </div>
     </div>
