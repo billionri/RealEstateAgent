@@ -1,21 +1,42 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { sendRequest } from '../../login/page';
-import { log } from 'node:console';
+import { use, useEffect, useState } from 'react';
 
 
 
+export interface PropertyDetails {
+    user_id:        number;
+    title:          string;
+    location:       string;
+    price:          number;
+    price_unit:     string;
+    bedrooms:       number;
+    bathrooms:      number;
+    area_sqft:      number;
+    type:           string;
+    purpose:        string;
+    description:    string;
+    main_image_url: string;
+    property_id:    number;
+    listed_at:      Date;
+}
 
 
 
-export default function PropertyDetails({params}: {params: {slug: string}}) {
- 
+export default function PropertyDetails({params}: { params: Promise<{ slug: string }> }) {
+  const {slug} = use(params);
+  const [details, setDetails] = useState<PropertyDetails>();
   const [gallery, setGallery] = useState([
     { src: '/property_images/prop1.jpg', alt: 'Property Image 1' },
     { src: '/property_images/prop2.jpg', alt: 'Property Image 2' },
-    { src: '/property_images/prop3.jpg', alt: 'Property Image 3' },
-    { src: '/property_images/prop4.jpg', alt: 'Property Image 4' },
+
+  ]);
+  const [features, setFeatures] = useState([
+    '3 Bedrooms',
+    '2 Bathrooms',
+    'Swimming Pool',
+    'Garden & Patio',
+    'Garage for 2 Cars'
   ]);
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -31,24 +52,51 @@ export default function PropertyDetails({params}: {params: {slug: string}}) {
   };
 
   useEffect(() => {
+    async function getDetails() {
+      const response = await fetch(`http://localhost:8000/api/properties/${slug}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch property details');
+      }
+      const data = await response.json();
+      setDetails(data);
+    }
+
     async function getImages() {
-      const images =await fetch('http://localhost:8000/api/images');
+      const images =await fetch('http://localhost:8000/api/images/');
       const galleryImages = await images.json();
       return galleryImages;
     }
+
+    async function getFeatures() {
+      const featuresResponse = await fetch(`http://localhost:8000/api/features/${slug}`);
+      const featuresData = await featuresResponse.json();
+      return featuresData.feature.split(',').map((feature: string) => feature.trim());
+    }
+
+    getDetails().then(() => {
+      console.log('Property details fetched successfully');
+    }).catch(err => {
+      console.error('Error fetching property details:', err);
+    });
 
     getImages().then(images => {
       setGallery(images);
     }).catch(err => {
       console.error('Error fetching images:', err);
     });
-  }, []);
 
+    getFeatures().then(featuresData => {
+      setFeatures(featuresData);
+    }).catch(err => {
+      console.error('Error fetching features:', err);
+    });
+  }, []);
+  
 
   return (
     <main className="bg-green-100 min-h-screen text-gray-800">
       <header className="bg-green-600 text-white text-center py-6">
-        <h1 className="text-3xl font-bold">Property Details {params.slug}</h1>
+        <h1 className="text-3xl font-bold">Property Details {slug}</h1>
       </header>
 
       <div className="container mx-auto px-4 py-10">
@@ -62,16 +110,19 @@ export default function PropertyDetails({params}: {params: {slug: string}}) {
           </div>
 
           <div className="md:w-1/2">
-            <h2 className="text-2xl font-bold mb-2">Luxury Green Villa</h2>
-            <div className="text-xl text-green-700 mb-2">₹250,000</div>
-            <div className="italic mb-4">Location: Green Valley, California</div>
-            <p className="mb-4">
-              Experience serene living in this beautiful green-themed villa. Spacious rooms, lush gardens, and modern amenities await you.
-            </p>
+            {details && (
+              <>
+                <h2 className="text-2xl font-bold mb-2">{details.title}</h2>
+                <div className="text-xl text-green-700 mb-2">{details.price}</div>
+                <div className="italic mb-4">Location: {details.location}</div>
+                <p className="mb-4">{details.description}</p>  
+              </>
+            )}
+            
 
             <h3 className="text-lg font-semibold mb-2">Features:</h3>
             <ul className="space-y-2">
-              {['3 Bedrooms', '2 Bathrooms', 'Swimming Pool', 'Garden & Patio', 'Garage for 2 Cars'].map((feature) => (
+              {features.map((feature) => (
                 <li key={feature} className="bg-green-200 px-4 py-2 rounded">{feature}</li>
               ))}
             </ul>
