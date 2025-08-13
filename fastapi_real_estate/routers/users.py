@@ -10,9 +10,9 @@ from Crypto.Cipher import AES
 import base64
 
 router = APIRouter()
-
+    
 # AES KEY (must be 16/24/32 bytes)
-AES_KEY = b"RealEstateShop1"
+AES_KEY = b"RealEstateShop15"
 
 def pad(text):
     return text + (16 - len(text) % 16) * chr(16 - len(text) % 16)
@@ -43,6 +43,7 @@ def get_db():
 @router.post("/login")
 def login(request: LoginRequest, db: Session = Depends(get_db)):
     user = db.query(User).filter(User.email == request.email).first()
+    print(request.email, request.password, user)
     if not user:
         raise HTTPException(status_code=401, detail="Invalid credentials")
 

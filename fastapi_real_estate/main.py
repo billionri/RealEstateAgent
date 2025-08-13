@@ -8,7 +8,7 @@ app = FastAPI(title="Real Estate FastAPI")
  
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Only allow frontend
+    allow_origins=["http://localhost:3000","http://localhost:3001"],  # Only allow frontend
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
