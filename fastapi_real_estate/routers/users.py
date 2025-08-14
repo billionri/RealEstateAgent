@@ -61,7 +61,7 @@ def get_db():
 # Login route
 @router.post("/login")
 def login(request: LoginRequest, db: Session = Depends(get_db)):
-    user = db.query(User).filter(User.email == request.email).first() 
+    user = db.query(User).filter(User.email == request.email).first()
     print("Received login:", request.email, request.password, "User found:", bool(user))
 
     if not user:
