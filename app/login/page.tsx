@@ -1,4 +1,5 @@
-﻿'use client';
+﻿﻿'use client';
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 export async function  sendRequest(method : string, url: string, body: any) {
@@ -62,11 +63,16 @@ const LoginForm = () => {
             <input
               type="text"
               id="userId"
+<<<<<<< HEAD
               value={userId}
               onChange={(e) => setUserId(e.target.value)}
               placeholder="username"
               className="h-12 px-3 border border-gray-300 rounded-md w-full"
               required
+=======
+              placeholder="JohnDoe123"
+              className="h-12 px-3 border border-gray-300 rounded-md text-base"
+>>>>>>> c255e42e299af19e45627476a791441131d30e3f
             />
           </div>
 
@@ -95,6 +101,7 @@ const LoginForm = () => {
             </a>
           </div>
 
+<<<<<<< HEAD
           {error && (
             <p className="text-red-500 text-sm text-center">{error}</p>
           )}
@@ -105,6 +112,20 @@ const LoginForm = () => {
           >
             Login
           </button>
+
+          <p className="text-center text-sm mt-4">
+            Don't have an account?{" "}
+            <Link href="/register" className="text-[#10b981] hover:text-[#059669] transition-colors">Sign Up</Link>
+          </p>
+           
+=======
+          <Link href="/"
+            type="submit"
+            className="flex items-center justify-center h-12 bg-emerald-500 hover:bg-emerald-700 text-white rounded-md text-base font-semibold font-poppins hover:bg-[#5548c7] transition-colors"
+          >
+            Login
+          </Link>
+>>>>>>> c255e42e299af19e45627476a791441131d30e3f
         </form>
       </div>
     </div>

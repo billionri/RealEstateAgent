@@ -99,5 +99,8 @@ $RECYCLE.BIN/
 /.vs
 # pyhton venv
 .venv*/
+
+.vs/
 # End of https://www.toptal.com/developers/gitignore/api/windows,react,nextjs,linux
+# *.sqlite
 *.sqlite
