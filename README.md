@@ -10,31 +10,6 @@ This is a Full-Stack Real Estate Web Application built with:
 	•	Payment Integration: Razorpay (dummy/demo integration)
 	•	Features: User registration/login, property listing, property details, gallery & video, add to “My Properties”
 
- Project Structure
- real-estate-project/
-│
-├─ backend/ (FastAPI backend)
-│  ├─ main.py
-│  ├─ models.py
-│  ├─ database.py
-│  ├─ seed.py
-│  ├─ routers/
-│  │   ├─ properties.py
-│  │   ├─ users.py
-│  │   └─ images.py
-│  └─ public/property_images/  ← store all images & videos here
-│
-├─ frontend/ (Next.js frontend)
-│  ├─ app/
-│  │   └─ pages like index.tsx, property details, myproperties
-│  ├─ components/
-│  └─ package.json
-│
-├─ venv/  ← Python virtual environment (optional to recreate)
-└─ README.md
-
-Prerequisites
-
 Before running the project, make sure you have:
 	1.	Node.js (v18+) & npm or yarn
 	2.	Python 3.12+
@@ -42,7 +17,7 @@ Before running the project, make sure you have:
 	4.	(Optional) VSCode or any IDE
 
  Step1.
-git clone 
+git clone https://github.com/billionri/RealEstateAgent.git
 
 Step 2: Setup Backend(run below command)
 cd fastapi_real_estate
